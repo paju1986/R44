@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>mainrotor.ac</path>
+
+  <animation>
+    <object-name>rotor0</object-name>
+    <object-name>rotor1</object-name>
+    <object-name>rotor2</object-name>
+    <object-name>rotor3</object-name>
+    <object-name>rotor4</object-name>
+    <object-name>rotor5</object-name>
+    <object-name>rotor6</object-name>
+    <object-name>rotor7</object-name>
+    <object-name>rotor8</object-name>
+    <object-name>rotor9</object-name>
+    <object-name>rotor10</object-name>
+  </animation>
+
+  <!-- Blades -->
+  <model>
+    <name>Blade1</name>
+    <path>Aircraft/R44/Models/MainRotor/blade1.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Blade2</name>
+    <path>Aircraft/R44/Models/MainRotor/blade2.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>      0 </roll-deg>
+      <pitch-deg>     0 </pitch-deg>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <name>BlocRotor</name>
+    <object-name>rotor1</object-name>
+    <object-name>rotor5</object-name>
+    <object-name>rotor6</object-name>
+    <object-name>rotor7</object-name>
+    <object-name>rotor8</object-name>
+    <object-name>rotor9</object-name>
+    <object-name>rotor10</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>BlocRotor</object-name>
+    <property>rotors/main/blade[0]/incidence-deg</property>
+    <interpolation>
+      <entry><ind> -2.3 </ind><dep> -0.005 </dep></entry>
+      <entry><ind>  0.0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 12.5 </ind><dep>  0.035 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>Ensemble</name>
+    <object-name>BlocRotor</object-name>
+    <object-name>Blade1</object-name>
+    <object-name>Blade2</object-name>
+    <object-name>rotor0</object-name>
+    <object-name>rotor2</object-name>
+    <object-name>rotor3</object-name>
+    <object-name>rotor4</object-name>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>Ensemble</object-name>
+    <property>rotors/main/rpm</property>
+    <factor> 1 </factor>
+    <center>
+       <x-m> 0 </x-m>
+       <y-m> 0 </y-m>
+       <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

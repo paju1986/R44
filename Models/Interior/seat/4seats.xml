@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- Siège avant gauche -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/seat/seat.xml</path>
+    <offsets>
+      <x-m> -3.405 </x-m>
+      <y-m> -0.250 </y-m>
+      <z-m> -0.663 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Siège avant droite -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/seat/seat.xml</path>
+    <offsets>
+      <x-m> -3.405 </x-m>
+      <y-m>  0.250 </y-m>
+      <z-m> -0.663 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Siège arrière gauche -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/seat/seat.xml</path>
+    <offsets>
+      <x-m> -2.594 </x-m>
+      <y-m> -0.250 </y-m>
+      <z-m> -0.617 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Siège arrière droite -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/seat/seat.xml</path>
+    <offsets>
+      <x-m> -2.594 </x-m>
+      <y-m>  0.250 </y-m>
+      <z-m> -0.617 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

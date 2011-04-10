@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Based on R22 panel for tye moment -->
+<PropertyList>
+
+   <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>Yoke</object-name>
+    <object-name>Yokeshaft</object-name>
+    <object-name>Collective</object-name>
+    <object-name>Labels</object-name>
+    <object-name>Clutch.guard</object-name>
+    <object-name>Dimmer</object-name>
+    <object-name>Nav.switch</object-name>
+    <object-name>Strobe.switch</object-name>
+    <object-name>Clutch.switch0</object-name>
+    <object-name>Clutch.switch</object-name>
+    <object-name>Batt.switch</object-name>
+    <object-name>Key</object-name>
+    <object-name>LHpedal</object-name>
+    <object-name>RHpedal</object-name>
+    <object-name>alt.annun</object-name>
+    <object-name>annunciators</object-name>
+    <object-name>fuel.annun</object-name>
+    <object-name>rpm.annun</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.123 </x-m>
+      <y-m> -0.078 </y-m>
+      <z-m>  0.082 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/vor/vor.xml</path>
+    <offsets>
+      <x-m> -0.123 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.082 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/plug/plug.xml</path>
+    <offsets>
+      <x-m> -0.123 </x-m>
+      <y-m>  0.078 </y-m>
+      <z-m>  0.082 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> -0.130 </x-m>
+      <y-m> -0.116 </y-m>
+      <z-m>  0.164 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/plug/plug.xml</path>
+    <offsets>
+      <x-m> -0.130 </x-m>
+      <y-m> -0.039 </y-m>
+      <z-m>  0.164 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.130 </x-m>
+      <y-m>  0.039 </y-m>
+      <z-m>  0.164 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
+    <offsets>
+      <x-m> -0.130 </x-m>
+      <y-m>  0.116 </y-m>
+      <z-m>  0.164 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m> 0.037 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.522 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Controls -->
+  <animation>
+    <type>rotate</type>
+    <object-name>Yokeshaft</object-name>
+    <object-name>Yoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> 15 </factor>
+    <center>
+      <x-m>  0.256 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.239 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Yoke</object-name>
+    <object-name>Yokeshaft</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> 15 </factor>
+    <center>
+      <x-m>  0.256 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.239 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RHpedal</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m> -0.123 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.361 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LHpedal</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> -20 </factor>
+    <center>
+      <x-m> -0.123 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.361 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Collective</object-name>
+    <property>controls/engines/engine/throttle</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  0.769 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.360 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
