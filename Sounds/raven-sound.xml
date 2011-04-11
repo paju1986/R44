@@ -7,7 +7,7 @@
     <engine>
       <name>engine-start</name>
       <mode>once</mode>
-      <path>Sounds/coughing.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Engine_start.wav</path>
       <condition>
         <greater-than>
           <property>sim/model/r44/state</property>
@@ -15,7 +15,7 @@
         </greater-than>
       </condition>
       <volume>
-        <factor>0.7</factor>
+        <factor>0.5</factor>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
@@ -24,7 +24,7 @@
     <rotor>
       <name>rotor</name>
       <mode>looped</mode>
-      <path>Sounds/rotor-2blade.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Rotor.wav</path>
       <condition>
         <and>
           <greater-than>
@@ -43,13 +43,13 @@
         </and>
       </condition>
       <volume>
-        <property>rotors/gear/torque-sound-filtered</property>
+        <factor>1</factor>
       </volume>
       <pitch>
         <property>rotors/main/rpm</property>
         <factor>0.004255</factor>
         <offset>-0.0</offset>
-        <max>2.5</max>
+        <max>1</max>
       </pitch>
       <position>
         <x> -1.3 </x>
@@ -63,7 +63,7 @@
     <rotor>
       <name>engine</name>
       <mode>looped</mode>
-      <path>Sounds/wasp.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Engine.wav</path>
       <condition>
          <and>
           <greater-than>
@@ -79,20 +79,20 @@
           </not>
           <not>
             <equals>
-              <property>sim/current-view/view-number</property>
-              <value>0</value>
+              <property>sim/model/r44/state</property>
+              <value>1</value>
             </equals>
           </not>
         </and>
       </condition>
       <volume>
-        <property>rotors/gear/torque-sound-filtered</property>
+        <factor>2.5</factor>
       </volume>
       <pitch>
         <property>rotors/main/rpm</property>
         <factor>0.004255</factor>
         <offset>-0.0</offset>
-        <max>1.03</max>
+        <max>1</max>
       </pitch>
       <position>
         <x>  0 </x>
@@ -143,7 +143,7 @@
     <wind>
       <name>wind</name>
       <mode>looped</mode>
-      <path>Sounds/wind.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Wind.wav</path>
       <condition>
         <and>
           <property>velocities/airspeed-kt</property>
@@ -186,7 +186,7 @@
     <crash>
       <name>intense ground contact</name>
       <mode>once</mode>
-      <path>Sounds/crash.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Explosion.wav</path>
       <property>sim/crashed</property>
       <max-dist>50</max-dist>
       <reference-dist>20</reference-dist>
@@ -206,7 +206,7 @@
     <alert>
       <name>rpm warning</name>
       <mode>once</mode>
-      <path>Sounds/beep.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Beep.wav</path>
       <condition>
         <and>
           <property>instrumentation/alerts/rpm</property>
@@ -231,7 +231,7 @@
     <click>
       <name>switches on</name>
       <mode>once</mode>
-      <path>Sounds/click.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Click.wav</path>
       <condition>
         <property>sim/model/sound/click</property>
       </condition>
@@ -250,7 +250,7 @@
     <click>
       <name>switches off</name>
       <mode>once</mode>
-      <path>Sounds/click.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Click.wav</path>
       <condition>
         <not>
           <property>sim/model/sound/click</property>

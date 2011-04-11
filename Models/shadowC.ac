@@ -1,0 +1,46 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+OBJECT world
+kids 2
+OBJECT poly
+name "shadowfuselage"
+data 14
+shadowfuselage
+texture "shadowC.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+4.536418 -1.57495 -1.357334
+4.536418 -1.57495 1.357335
+-4.54005 -1.57495 1.357335
+-4.540049 -1.57495 -1.357335
+numsurf 1
+SURF 0x00
+mat 0
+refs 4
+0 1.0 0.999999344349
+3 7.88033176491e-08 1.0
+2 0.0 0.500000476837
+1 1.0 0.5
+kids 0
+OBJECT poly
+name "shadowrotor"
+data 11
+shadowrotor
+texture "shadowC.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+2.819639 -1.603849 -0.132082
+2.819639 -1.603849 0.132082
+-7.256851 -1.603849 0.132082
+-7.25685 -1.603849 -0.132082
+numsurf 1
+SURF 0x00
+mat 0
+refs 4
+0 0.999999940395 0.499996364117
+3 4.73217482977e-08 0.5
+2 0.0 3.4973277252e-06
+1 0.999999940395 0.0
+kids 0

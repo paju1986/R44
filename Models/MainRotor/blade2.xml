@@ -87,10 +87,16 @@
     <object-name>blade3</object-name>
     <object-name>blade4</object-name>
     <condition>
-      <less-than>
-        <property>rotors/main/rpm</property>
-	<value>150</value>
-      </less-than>
+      <or>
+        <less-than>
+          <property>rotors/main/rpm</property>
+          <value>150</value>
+        </less-than>
+        <equals>
+          <property>rotors/main/bladesvisible</property>
+          <value>1</value>
+        </equals>
+      </or>
     </condition>
   </animation>
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="raven-cnf.xml">
+
+  <sim>
+
+    <description>Robinson R44 Raven II</description>
+    <author>Emmanuel BARANGER (3D)/JM-26 (FDM)</author>
+
+  </sim>
+
+</PropertyList>
+
