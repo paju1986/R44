@@ -95,14 +95,14 @@
         <max>1</max>
       </pitch>
       <position>
-        <x>  0 </x>
-        <y> -1 </y>
-        <z>  0 </z>
+        <x> 0 </x>
+        <y> 0 </y>
+        <z> 0.3 </z>
       </position>
       <orientation>
-        <x> -0.1 </x>
-        <y> -1.0 </y>
-        <z> -0.2 </z>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
         <inner-angle>50</inner-angle>
         <outer-angle>100</outer-angle>
         <outer-gain>0.2</outer-gain>
@@ -113,7 +113,8 @@
 
     <squeal>
      <name>water</name>
-     <path>Sounds/wave.wav</path>
+     <mode>once</mode>
+     <path>Aircraft/R44/Sounds/BaBoOn-R44-Splash.wav</path>
      <condition>
        <or>
          <property>/gear/gear[0]/wow</property>
@@ -126,12 +127,12 @@
      </condition>
      <volume>
        <property>/velocities/speed-down-fps</property>
-       <factor>0.5</factor>
+       <factor>1</factor>
        <max>1.0</max>
      </volume>
      <volume>
        <property>/velocities/speed-down-fps</property>
-       <factor>0.5</factor>
+       <factor>1</factor>
        <max>1.0</max>
      </volume>
     </squeal>
@@ -139,7 +140,7 @@
     <contact>
       <name>ground contact</name>
       <mode>once</mode>
-      <path>Sounds/helicopter-skid.wav</path>
+      <path>Aircraft/R44/Sounds/BaBoOn-R44-Flotteur.wav</path>
       <condition>
         <or>
           <property>gear/gear[6]/wow</property>

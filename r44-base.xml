@@ -4,10 +4,41 @@
 
   <sim include="Nasal/views.xml">
 
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
 
     <fuel-fraction>0.8</fuel-fraction>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="3">
+      <name>Left Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="4">
+      <name>Load</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>800</max-lb>
+    </weight>
 
     <help>
       <title>R44 - background and help</title>

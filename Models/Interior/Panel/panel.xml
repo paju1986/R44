@@ -71,7 +71,7 @@
   </model>
 
   <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/plug/plug.xml</path>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> -0.130 </x-m>
       <y-m> -0.039 </y-m>

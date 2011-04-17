@@ -24,7 +24,6 @@
           </script>
         </binding>
       </item>
-<!--
       <item>
         <label>Immatriculation</label>
         <binding>
@@ -32,7 +31,6 @@
           <script>r44.immat_dialog.toggle()</script>
         </binding>
       </item>
--->
     </menu>
   </default>
 

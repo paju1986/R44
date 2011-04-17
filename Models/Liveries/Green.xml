@@ -4,8 +4,8 @@
   <sim>
       <model>      
         <livery>
-          <name type="string">Red</name>
-          <texture>Liveries/red.png</texture>
+          <name type="string">Green</name>
+          <texture>Liveries/Green.png</texture>
 <!--
           <diffuse>
             <red>   0.5 </red>
@@ -39,8 +39,8 @@
 -->
         </livery>
         <livery-font>
-          <name type="string">Red</name>
-          <texture>Liveries/redF.png</texture>
+          <name type="string">Green</name>
+          <texture>Liveries/GreenF.png</texture>
 <!--
           <diffuse>
             <red>   0.5 </red>
