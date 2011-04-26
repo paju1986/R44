@@ -45,7 +45,7 @@
          notorque="0"
          dragfactor="0.30"
          translift-ve="20"
-         translift-maxfactor="1.3"
+         translift-maxfactor="0.7"
          ground-effect-constant="0.1"
          twist="-8.5"
          taper="1"
@@ -53,7 +53,7 @@
          number-of-segments="8"
          number-of-parts="8"
          rel-len-where-incidence-is-measured="0.7"
-         rel-len-blade-start="0.02"
+         rel-len-blade-start="0.04"
          airfoil-lift-coefficient="5.67"
          airfoil-drag-coefficient0="0.01"
          airfoil-drag-coefficient1="0.05"
@@ -113,7 +113,7 @@
              max-power-rotor-brake="50"
              rotorgear-friction="0.5"
              engine-prop-factor="0.005"
-             engine-accel-limit="10"
+             engine-accel-limit="3"
              yasimdragfactor="10"
              yasimliftfactor="140">
              <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
@@ -219,7 +219,7 @@
   <weight x="0.5588" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
   <weight x="0.5588" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
 
-  <ballast x="3" y=" 0.0" z="-0.5" mass="150"/>
+  <ballast x="3" y=" 0.0" z="-0.5" mass="450"/>
   <ballast x="2" y=" 1.1" z=" 1.1" mass="100"/>
   <ballast x="2" y="-1.1" z=" 1.1" mass="50"/>
 
