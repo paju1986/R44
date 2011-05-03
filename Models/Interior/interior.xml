@@ -61,6 +61,16 @@
     </offsets>
   </model>
 
+  <!-- Copilote -->
+  <model>
+    <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -3.636 </x-m>
+      <y-m> 0.252 </y-m>
+      <z-m> -0.711 </z-m>
+    </offsets>
+  </model>
+
   <!-- Planche de bord -->
   <model>
     <path>Aircraft/R44/Models/Interior/Panel/panel.xml</path>

@@ -37,6 +37,7 @@ var cone1 = props.globals.getNode("rotors/main/cone1-deg", 1);
 var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
 var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
+var battery = props.globals.getNode("controls/electric/battery-switch");
 
 # state:
 # 0 off

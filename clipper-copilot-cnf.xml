@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList include="r44-base.xml">
+<PropertyList include="copilot-base.xml">
 
   <sim>
-    <description>Robinson R44 Clipper (YASim)</description>
-    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
-    <flight-model archive="y">yasim</flight-model>
-    <aero archive="y">clipper</aero>
+
+    <description>R44 Clipper Copilot (YASim)</description>
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config), DE L'HAMAIDE Clément (Dual Control)</author>
+    <flight-model>null</flight-model>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
 
     <startup>
       <splash-texture>Aircraft/R44/Splashs/clipper-splash.png</splash-texture>
-    </startup> 
+    </startup>
 
     <sound>
       <path>Aircraft/R44/Sounds/clipper-sound.xml</path>
     </sound>
 
     <model>
-      <path archive="y">Aircraft/R44/Models/clipper.xml</path>
-      <livery>
-        <file type="string">default</file>
-      </livery>
-      <r44>
-        <state type="int">0</state>
-        <engine type="float">0.0</engine>
-        <rotor-step-deg type="float">-1.0</rotor-step-deg>
-      </r44>
+      <path>Aircraft/R44/Models/clipper-copilot.xml</path>
+      <variant type="int"> 0 </variant>
     </model>
+
   </sim>
 
   <!-- ############################### -->
@@ -39,11 +35,10 @@
       <file>Aircraft/R44/Nasal/clipper-dual-control.nas</file>
     </aircraft_dual_control>
     <dual_control>
-      <file>Aircraft/R44/Nasal/pilot-dual-control.nas</file>
+      <file>Aircraft/R44/Nasal/copilot-dual-control.nas</file>
     </dual_control>
   </nasal>
   <!-- ######## DUAL CONTROL ######### -->
   <!-- ############################### -->
 
 </PropertyList>
-

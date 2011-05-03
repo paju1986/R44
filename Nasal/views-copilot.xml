@@ -5,29 +5,27 @@
   <chase-distance-m type="double" archive="y"> -15 </chase-distance-m>
 
   <view n="0">
-    <internal archive="y">true</internal>
-    <config>
-      <x-offset-m archive="y">  0.252 </x-offset-m> <!--right-->
-      <y-offset-m archive="y"> -0.165 </y-offset-m> <!--up-->
-      <z-offset-m archive="y"> -3.407 </z-offset-m> <!--back-->
-      <pitch-offset-deg> -15 </pitch-offset-deg>
-      <default-field-of-view-deg type="double"> 55 </default-field-of-view-deg>
-    </config>
-  </view>
-
-  <view n="100">
     <name>Copilot View</name>
-    <internal archive="y">true</internal>
     <type>lookfrom</type>
     <config>
-      <dynamic-view type="bool">true</dynamic-view>
-      <from-model type="bool">true</from-model>
-      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <internal type="bool">true</internal>
+      <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
+      <from-model type="bool">false</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+      <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+      <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+      <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+      <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+      <at-model type="bool">false</at-model>
+      <at-model-idx type="int">0</at-model-idx>
       <x-offset-m archive="y"> -0.252 </x-offset-m> <!--right-->
       <y-offset-m archive="y"> -0.165 </y-offset-m> <!--up-->
       <z-offset-m archive="y"> -3.407 </z-offset-m> <!--back-->
-      <pitch-offset-deg> 0 </pitch-offset-deg>
-      <default-field-of-view-deg> 60 </default-field-of-view-deg>
+      <heading-offset-deg type="double">0</heading-offset-deg>
+      <pitch-offset-deg type="double">-12</pitch-offset-deg>
+      <roll-offset-deg type="double">0</roll-offset-deg>
     </config>
   </view>
 

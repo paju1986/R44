@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>magneto.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>key</object-name>
+  </animation>
+
+  <!-- Key Switch -->
+  <animation>
+    <type>pick</type>
+    <object-name>key</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/magnetos</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <property>controls/engines/engine/magnetos</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

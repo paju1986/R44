@@ -2,9 +2,9 @@
 
 <PropertyList>
 
-  <sim include="Nasal/views.xml">
+  <sim include="Nasal/views-copilot.xml">
 
-    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config), DE L'HAMAIDE Clément (Dual Control)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
 
@@ -73,24 +73,17 @@
       </key>
     </help>
 
-    <menubar include="Dialogs/r44-menu.xml"/>
-
-    <!-- ############################### -->
-    <!-- ######## DUAL CONTROL ######### -->
-    <remote>
-      <pilot-callsign type="string"></pilot-callsign>
-    </remote>
-
     <multiplay>
       <generic>
-         <float n="5" alias="/controls/flight/rudder"/> 
-         <float n="6" alias="/controls/flight/elevator"/>
-         <float n="7" alias="/controls/flight/aileron"/>
-         <float n="8" alias="/controls/engines/engine/throttle"/>
-       </generic>
+      </generic>
     </multiplay>
-    <!-- ######## DUAL CONTROL ######### -->
-    <!-- ############################### -->
+
+    <presets>
+      <onground type="bool">false</onground>
+      <altitude-agl-ft type="double">30.0</altitude-agl-ft>
+    </presets>
+
+    <menubar include="Dialogs/copilot-menu.xml"/>
 
   </sim>
 

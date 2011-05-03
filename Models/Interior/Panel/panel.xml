@@ -13,19 +13,9 @@
     <object-name>Collective</object-name>
     <object-name>Labels</object-name>
     <object-name>Clutch.guard</object-name>
-    <object-name>Dimmer</object-name>
-    <object-name>Nav.switch</object-name>
-    <object-name>Strobe.switch</object-name>
-    <object-name>Clutch.switch0</object-name>
-    <object-name>Clutch.switch</object-name>
-    <object-name>Batt.switch</object-name>
-    <object-name>Key</object-name>
     <object-name>LHpedal</object-name>
     <object-name>RHpedal</object-name>
     <object-name>alt.annun</object-name>
-    <object-name>annunciators</object-name>
-    <object-name>fuel.annun</object-name>
-    <object-name>rpm.annun</object-name>
 
     <!-- Objets transparents -->
   </animation>
@@ -196,6 +186,140 @@
       <z>  0 </z>
     </axis>
   </animation>
+
+  <!-- Les lampes -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m> -0.074 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-temp.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m> -0.054 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-chip.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m> -0.033 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/starter-on.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m>  0.003 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/tr-chip.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m>  0.024 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-fuel.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m>  0.044 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-rpm.xml</path>
+    <offsets>
+      <x-m> -0.132 </x-m>
+      <y-m>  0.065 </y-m>
+      <z-m>  0.227 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Magneto -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/magneto/magneto.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m>  0.049 </y-m>
+      <z-m> -0.039 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Switch -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/nav-lts.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m> -0.073 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/strobe.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m> -0.056 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/alt.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/master-batt.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m>  0.017 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Dimmer -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/divers/dimmer.xml</path>
+    <offsets>
+      <x-m>  0.024 </x-m>
+      <y-m> -0.072 </y-m>
+      <z-m> -0.022 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
 
 </PropertyList>
 

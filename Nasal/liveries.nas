@@ -1,2 +1,2 @@
-aircraft.livery.init("Aircraft/R44/Models/Liveries");
+aircraft.livery.init("Aircraft/R44_dual_control/Models/Liveries");
 
