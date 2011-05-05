@@ -17,7 +17,7 @@
       <interval-sec>0.1</interval-sec>
       <binding>
         <command>property-adjust</command>
-        <property>controls/lighting/panel-norm</property>
+        <property>/controls/lighting/instruments-norm</property>
         <step>0.05</step>
         <min>0</min>
         <max>1.0</max>
@@ -35,7 +35,7 @@
       <interval-sec>0.1</interval-sec>
       <binding>
         <command>property-adjust</command>
-        <property>controls/lighting/panel-norm</property>
+        <property>/controls/lighting/instruments-norm</property>
         <step>-0.05</step>
         <min>0</min>
         <max>1.0</max>

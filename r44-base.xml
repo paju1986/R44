@@ -78,16 +78,16 @@
     <!-- ############################### -->
     <!-- ######## DUAL CONTROL ######### -->
     <remote>
-      <pilot-callsign type="string"></pilot-callsign>
+     <pilot-callsign type="string"></pilot-callsign>
     </remote>
 
     <multiplay>
-      <generic>
-         <float n="5" alias="/controls/flight/rudder"/> 
-         <float n="6" alias="/controls/flight/elevator"/>
-         <float n="7" alias="/controls/flight/aileron"/>
-         <float n="8" alias="/controls/engines/engine/throttle"/>
-       </generic>
+     <generic>
+	<float n="5" alias="/controls/flight/rudder"/>
+	<float n="6" alias="/controls/flight/elevator"/>
+	<float n="7" alias="/controls/flight/aileron"/>
+	<float n="8" alias="/controls/engines/engine/throttle"/>
+     </generic>
     </multiplay>
     <!-- ######## DUAL CONTROL ######### -->
     <!-- ############################### -->
@@ -98,19 +98,44 @@
     <engines>
       <engine n="0">
         <magnetos>0</magnetos>
-      </engine>
-      <engine n="1">
-        <magnetos>0</magnetos>
+        <throttle>1.0</throttle>
+        <clutch type="bool">0</clutch>
+        <clutchguard type="bool">0</clutchguard>
       </engine>
     </engines>
     <gear>
       <brake-parking>1</brake-parking>
     </gear>
     <rotor>
+      <engine-throttle type="double">1.0</engine-throttle>
+      <brake>0</brake>
       <reltarget>1</reltarget>
       <maxreltorque>1</maxreltorque>
     </rotor>
+    <flight>
+      <aileron-trim>0</aileron-trim>
+      <elevator-trim>0</elevator-trim>
+    </flight>
   </controls>
+
+  <engines>
+    <engine>
+      <rpm type="double">0</rpm>
+      <running type="bool">false</running>
+      <clutch-engaged type="bool">false</clutch-engaged>
+    </engine>
+  </engines>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
 
   <instrumentation>
     <gsdi>
@@ -142,10 +167,12 @@
       <file>Aircraft/R44/Nasal/immat.nas</file>
       <file>Aircraft/R44/Nasal/light.nas</file>
       <file>Aircraft/R44/Nasal/r44.nas</file>
+      <file>Aircraft/R44/Nasal/rotoranimation.nas</file>
+      <file>Aircraft/R44/Nasal/electrical.nas</file>
       <file>Aircraft/R44/Nasal/liveries.nas</file>
       <file>Aircraft/R44/Nasal/bladevisible.nas</file>
       <file>Aircraft/R44/Nasal/fcs-management.nas</file>
-      <file>Aircraft/Generic/helicopter-fcs.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>*
     </r44>
   </nasal>
 

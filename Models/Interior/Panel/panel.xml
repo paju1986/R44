@@ -189,6 +189,26 @@
 
   <!-- Les lampes -->
   <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/brake.xml</path>
+    <offsets>
+      <x-m> 0.020 </x-m>
+      <y-m> -0.042 </y-m>
+      <z-m> -0.027 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+    <offsets>
+      <x-m> -0.110 </x-m>
+      <y-m> 0.007 </y-m>
+      <z-m> 0.034 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
     <offsets>
       <x-m> -0.132 </x-m>
@@ -305,6 +325,16 @@
     <offsets>
       <x-m>  0.052 </x-m>
       <y-m>  0.017 </y-m>
+      <z-m> -0.040 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/clutch.xml</path>
+    <offsets>
+      <x-m>  0.052 </x-m>
+      <y-m> -0.029 </y-m>
       <z-m> -0.040 </z-m>
       <pitch-deg> -65 </pitch-deg>
     </offsets>

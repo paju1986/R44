@@ -13,7 +13,16 @@
     <type>select</type>
     <object-name>lampon</object-name>
     <condition>
-      <value> false </value>
+      <and>
+        <equals>
+          <property>/controls/lighting/turn-off-light</property>
+          <value> true </value>
+        </equals>
+        <greater-than>
+          <property>/systems/electrical/outputs/instrument-lights</property>
+          <value>0.0001</value>
+        </greater-than>
+      </and>
     </condition>
   </animation>
 
@@ -35,6 +44,7 @@
       <green> 1 </green>
       <blue>  1 </blue>
     </emission>
+    <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
   </animation>
 
 </PropertyList>

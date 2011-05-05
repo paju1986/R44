@@ -4,7 +4,7 @@
 
   <sim>
     <description>Robinson R44 Raven II (YASim)</description>
-    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <author>Emmanuel BARANGER (3D)/JM-26 (FDM)</author>
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">raven</aero>
 

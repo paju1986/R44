@@ -9,7 +9,6 @@
     <object-name>switch</object-name>
   </animation>
 
-  <!-- Nav Switch -->
   <animation>
     <type>pick</type>
     <object-name>switch</object-name>
@@ -18,6 +17,10 @@
       <binding>
         <command>property-toggle</command>
         <property>controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+          <command>property-toggle</command>
+          <property>sim/model/sound/click</property>
       </binding>
     </action>
   </animation>

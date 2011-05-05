@@ -1,404 +1,202 @@
-# Maik Justus < fg # mjustus : de >, based on bo105.nas by Melchior FRANZ, < mfranz # aon : at >
+############################################################
+##  Adapted from R22.nas for R44 by Clement DE L'HAMAIDE  ##
+##                  Date : 05/05/2011                     ##
+############################################################
 
-if (!contains(globals, "cprint")) {
-	globals.cprint = func {};
-}
+var RPM_arm=props.globals.getNode("/instrumentation/alerts/rpm",1);
+var last_time = 0;
+var start_timer=0;
+var GPS = 0.002222;  ### avg cruise = 8 gph
+var Fuel_Density=6.0;
+var Fuel1_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
+var Fuel1_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
+var Fuel2_Level= props.globals.getNode("/consumables/fuel/tank[1]/level-gal_us",1);
+var Fuel2_LBS= props.globals.getNode("/consumables/fuel/tank[1]/level-lbs",1);
+var TotalFuelG=props.globals.getNode("/consumables/fuel/total-fuel-gals",1);
+var TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
+var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 
-var optarg = aircraft.optarg;
-var makeNode = aircraft.makeNode;
+var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
+FHmeter.stop();
 
-var sin = func(a) { math.sin(a * math.pi / 180.0) }
-var cos = func(a) { math.cos(a * math.pi / 180.0) }
-var pow = func(v, w) { math.exp(math.ln(v) * w) }
-var npow = func(v, w) { math.exp(math.ln(abs(v)) * w) * (v < 0 ? -1 : 1) }
-var clamp = func(v, min = 0, max = 1) { v < min ? min : v > max ? max : v }
-var normatan = func(x) { math.atan2(x, 1) * 2 / math.pi }
-
-# timers ============================================================
-var turbine_timer = aircraft.timer.new("/sim/time/hobbs/turbines", 10);
-aircraft.timer.new("/sim/time/hobbs/helicopter", nil).start();
-
-# engines/rotor =====================================================
-var state = props.globals.getNode("sim/model/r44/state");
-var engine = props.globals.getNode("sim/model/r44/engine");
-var rotor = props.globals.getNode("controls/engines/engine/magnetos");
-var rotor_rpm = props.globals.getNode("rotors/main/rpm");
-var torque = props.globals.getNode("rotors/gear/total-torque", 1);
-var collective = props.globals.getNode("controls/engines/engine[0]/throttle");
-var turbine = props.globals.getNode("sim/model/r44/turbine-rpm-pct", 1);
-var torque_pct = props.globals.getNode("sim/model/r44/torque-pct", 1);
-var stall = props.globals.getNode("rotors/main/stall", 1);
-var stall_filtered = props.globals.getNode("rotors/main/stall-filtered", 1);
-var torque_sound_filtered = props.globals.getNode("rotors/gear/torque-sound-filtered", 1);
-var target_rel_rpm = props.globals.getNode("controls/rotor/reltarget", 1);
-var max_rel_torque = props.globals.getNode("controls/rotor/maxreltorque", 1);
-var cone = props.globals.getNode("rotors/main/cone-deg", 1);
-var cone1 = props.globals.getNode("rotors/main/cone1-deg", 1);
-var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
-var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
-var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
-var battery = props.globals.getNode("controls/electric/battery-switch");
-
-# state:
-# 0 off
-# 1 engine startup
-# 2 engine startup with small torque on rotor
-# 3 engine idle
-# 4 engine accel
-# 5 engine sound loop
-
-var update_state = func {
-	var s = state.getValue();
-	var new_state = arg[0];
-	if (new_state == (s+1)) {
-		state.setValue(new_state);
-		if (new_state == (1)) {
-			settimer(func { update_state(2) }, 2);
-			interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
-		} else {
-			if (new_state == (2)) {
-				settimer(func { update_state(3) }, 3);
-				rotor.setValue(1);
-				max_rel_torque.setValue(0.01);
-				target_rel_rpm.setValue(0.002);
-				interpolate(engine, 0.05, 0.2, 0.03, 1, 0.07, 0.1, 0.04, 0.9, 0.02, 0.5);
-			} else { 
-				if (new_state == (3)) {
-					if (rotor_rpm.getValue() > 100) {
-						#rotor is running at high rpm, so accel. engine faster
-						max_rel_torque.setValue(1);
-						target_rel_rpm.setValue(1.03);
-						state.setValue(5);
-						interpolate(engine, 1.03, 10);
-					} else {
-						settimer(func { update_state(4) }, 7);
-						max_rel_torque.setValue(0.05);
-						target_rel_rpm.setValue(0.02);
-						interpolate(engine, 0.07, 0.1, 0.03, 0.25, 0.075, 0.2, 0.08, 1, 0.06,2);
-					}
-				} else {
-					if (new_state == (4)) {
-						settimer(func { update_state(5) }, 30);
-						max_rel_torque.setValue(0.25);
-						target_rel_rpm.setValue(0.8);
-					} else {
-							if (new_state == (5)) {
-							max_rel_torque.setValue(1);
-							target_rel_rpm.setValue(1.03);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-var engines = func {
-	if (props.globals.getNode("sim/crashed",1).getBoolValue()) {return; }
-	var s = state.getValue();
-	if (arg[0] == 1) {
-		if (s == 0) {
-			update_state(1);
-		}
-	} else {
-		rotor.setValue(0);				# engines stopped
-		state.setValue(0);
-		interpolate(engine, 0, 4);
-	}
-}
-
-var update_engine = func {
-	if (state.getValue() > 3 ) {
-		interpolate (engine,  clamp( rotor_rpm.getValue() / 235 ,
-								0.05, target_rel_rpm.getValue() ), 0.25 );
-	}
-}
-
-var update_rotor_cone_angle = func {
-	r = rotor_rpm.getValue();
-        #print("r  = ", r);
-
-	var f = r / 186;
-        #print("f1 = ", f);
-
-	f = clamp (f, 0 , 1);
-        #print("f2 = ", f);
-
-	c = cone.getValue();
-        #print("c  = ", c);
-
-	cone1.setDoubleValue( (c * 1.00) + (f * c));
-	cone2.setDoubleValue( (c * 0.10) + (f * c));
-	cone3.setDoubleValue( (c * 0.15) + (f * c));
-	cone4.setDoubleValue( (c * 0.20) + (f * c));
-}
-
-# torquemeter
-var torque_val = 0;
-torque.setDoubleValue(0);
-
-var update_torque = func(dt) {
-	var f = dt / (0.2 + dt);
-	torque_val = torque.getValue() * f + torque_val * (1 - f);
-	torque_pct.setDoubleValue(torque_val / 5300);
-}
-
-# sound =============================================================
-# stall sound
-var stall_val = 0;
-stall.setDoubleValue(0);
-
-var update_stall = func(dt) {
-	var s = stall.getValue();
-	if (s < stall_val) {
-		var f = dt / (0.3 + dt);
-		stall_val = s * f + stall_val * (1 - f);
-	} else {
-		stall_val = s;
-	}
-	var c = collective.getValue();
-	stall_filtered.setDoubleValue(stall_val + 0.006 * (1 - c));
-}
-
-
-# modify sound by torque
-var torque_val = 0;
-
-var update_torque_sound_filtered = func(dt) {
-	var t = torque.getValue();
-	t = clamp(t * 0.000001);
-	t = t*0.25 + 0.75;
-	var r = clamp(rotor_rpm.getValue()*0.02-1);
-	torque_sound_filtered.setDoubleValue(t*r);
-}
-
-# skid slide sound
-var Skid = {
-	new : func(n) {
-		var m = { parents : [Skid] };
-		var soundN = props.globals.getNode("sim/sound", 1).getChild("slide", n, 1);
-		var gearN = props.globals.getNode("gear", 1).getChild("gear", n, 1);
-
-		m.compressionN = gearN.getNode("compression-norm", 1);
-		m.rollspeedN = gearN.getNode("rollspeed-ms", 1);
-		m.frictionN = gearN.getNode("ground-friction-factor", 1);
-		m.wowN = gearN.getNode("wow", 1);
-		m.volumeN = soundN.getNode("volume", 1);
-		m.pitchN = soundN.getNode("pitch", 1);
-
-		m.compressionN.setDoubleValue(0);
-		m.rollspeedN.setDoubleValue(0);
-		m.frictionN.setDoubleValue(0);
-		m.volumeN.setDoubleValue(0);
-		m.pitchN.setDoubleValue(0);
-		m.wowN.setBoolValue(1);
-		m.self = n;
-		return m;
-	},
-	update : func {
-		me.wowN.getBoolValue() or return;
-		var rollspeed = abs(me.rollspeedN.getValue());
-		me.pitchN.setDoubleValue(rollspeed * 0.6);
-
-		var s = normatan(20 * rollspeed);
-		var f = clamp((me.frictionN.getValue() - 0.5) * 2);
-		var c = clamp(me.compressionN.getValue() * 2);
-		me.volumeN.setDoubleValue(s * f * c * 2);
-		#if (!me.self) {
-		#	cprint("33;1", sprintf("S=%0.3f  F=%0.3f  C=%0.3f  >>  %0.3f", s, f, c, s * f * c));
-		#}
-	},
-};
-
-var skid = [];
-for (var i = 0; i < 3; i += 1) {
-	append(skid, Skid.new(i));
-}
-
-var update_slide = func {
-	forindex (var i; skid) {
-		skid[i].update();
-	}
-}
-
-# crash handler =====================================================
-#var load = nil;
-var crash = func {
-	if (arg[0]) {
-		# crash
-		setprop("rotors/main/rpm", 0);
-		setprop("rotors/main/blade[0]/flap-deg", -60);
-		setprop("rotors/main/blade[1]/flap-deg", -50);
-		setprop("rotors/main/blade[2]/flap-deg", -40);
-		setprop("rotors/main/blade[3]/flap-deg", -30);
-		setprop("rotors/main/blade[0]/incidence-deg", -30);
-		setprop("rotors/main/blade[1]/incidence-deg", -20);
-		setprop("rotors/main/blade[2]/incidence-deg", -50);
-		setprop("rotors/main/blade[3]/incidence-deg", -55);
-		setprop("rotors/tail/rpm", 0);
-		strobe_switch.setValue(0);
-		beacon_switch.setValue(0);
-		nav_light_switch.setValue(0);
-		rotor.setValue(0);
-		torque_pct.setValue(torque_val = 0);
-		stall_filtered.setValue(stall_val = 0);
-		state.setValue(0);
-
-	} else {
-		# uncrash (for replay)
-		setprop("rotors/tail/rpm", 1500);
-		setprop("rotors/main/rpm", 235);
-		for (i = 0; i < 4; i += 1) {
-			setprop("rotors/main/blade[" ~ i ~ "]/flap-deg", 0);
-			setprop("rotors/main/blade[" ~ i ~ "]/incidence-deg", 0);
-		}
-		strobe_switch.setValue(1);
-		beacon_switch.setValue(1);
-		rotor.setValue(1);
-		state.setValue(5);
-	}
-}
-
-# "manual" rotor animation for flight data recorder replay ============
-var rotor_step = props.globals.getNode("sim/model/r44/rotor-step-deg");
-var blade1_pos = props.globals.getNode("rotors/main/blade[0]/position-deg", 1);
-var blade2_pos = props.globals.getNode("rotors/main/blade[1]/position-deg", 1);
-var blade3_pos = props.globals.getNode("rotors/main/blade[2]/position-deg", 1);
-var blade4_pos = props.globals.getNode("rotors/main/blade[3]/position-deg", 1);
-var rotorangle = 0;
-
-var rotoranim_loop = func {
-	i = rotor_step.getValue();
-	if (i >= 0.0) {
-		blade1_pos.setValue(rotorangle);
-		blade2_pos.setValue(rotorangle + 60);
-		blade3_pos.setValue(rotorangle + 120);
-		blade4_pos.setValue(rotorangle + 180);
-		rotorangle += i;
-		settimer(rotoranim_loop, 0.1);
-	}
-}
-
-var init_rotoranim = func {
-	if (rotor_step.getValue() >= 0.0) {
-		settimer(rotoranim_loop, 0.1);
-	}
-}
-
-# view management ===================================================
-
-var elapsedN = props.globals.getNode("/sim/time/elapsed-sec", 1);
-var flap_mode = 0;
-var down_time = 0;
-controls.flapsDown = func(v) {
-	if (!flap_mode) {
-		if (v < 0) {
-			down_time = elapsedN.getValue();
-			flap_mode = 1;
-			dynamic_view.lookat(
-					5,     # heading left
-					-20,   # pitch up
-					0,     # roll right
-					0.2,   # right
-					0.6,   # up
-					0.85,  # back
-					0.2,   # time
-					55,    # field of view
-			);
-		} elsif (v > 0) {
-			flap_mode = 2;
-			var p = "/sim/view/dynamic/enabled";
-			setprop(p, !getprop(p));
-		}
-
-	} else {
-		if (flap_mode == 1) {
-			if (elapsedN.getValue() < down_time + 0.2) {
-				return;
-			}
-			dynamic_view.resume();
-		}
-		flap_mode = 0;
-	}
-}
-
-
-# register function that may set me.heading_offset, me.pitch_offset, me.roll_offset,
-# me.x_offset, me.y_offset, me.z_offset, and me.fov_offset
-#
-dynamic_view.register(func {
-	var lowspeed = 1 - normatan(me.speedN.getValue() / 50);
-	var r = sin(me.roll) * cos(me.pitch);
-
-	me.heading_offset =						# heading change due to
-		(me.roll < 0 ? -50 : -30) * r * abs(r);			#    roll left/right
-
-	me.pitch_offset =						# pitch change due to
-		(me.pitch < 0 ? -50 : -50) * sin(me.pitch) * lowspeed	#    pitch down/up
-		+ 15 * sin(me.roll) * sin(me.roll);			#    roll
-
-	me.roll_offset =						# roll change due to
-		-15 * r * lowspeed;					#    roll
-});
-
-# main() ============================================================
-var delta_time = props.globals.getNode("/sim/time/delta-realtime-sec", 1);
-var adf_rotation = props.globals.getNode("/instrumentation/adf/rotation-deg", 1);
-var hi_heading = props.globals.getNode("/instrumentation/heading-indicator/indicated-heading-deg", 1);
-
-var main_loop = func {
-	# adf_rotation.setDoubleValue(hi_heading.getValue());
-
-	var dt = delta_time.getValue();
-	update_torque(dt);
-	update_stall(dt);
-	update_torque_sound_filtered(dt);
-	update_slide();
-	update_engine();
-	update_rotor_cone_angle();
-	settimer(main_loop, 0);
-}
-
-
-var crashed = 0;
-var variant = nil;
-var doors = nil;
-var config_dialog = nil;
-
-# initialization
 setlistener("/sim/signals/fdm-initialized", func {
-
-	init_rotoranim();
-	collective.setDoubleValue(1);
-
-	setlistener("/sim/signals/reinit", func {
-		cmdarg().getBoolValue() and return;
-		cprint("32;1", "reinit");
-		turbine_timer.stop();
-		collective.setDoubleValue(1);
-		variant.scan();
-		crashed = 0;
-	});
-
-	setlistener("sim/crashed", func {
-		cprint("31;1", "crashed ", cmdarg().getValue());
-		turbine_timer.stop();
-		if (cmdarg().getBoolValue()) {
-			crash(crashed = 1);
-		}
-	});
-
-	setlistener("/sim/freeze/replay-state", func {
-		cprint("33;1", cmdarg().getValue() ? "replay" : "pause");
-		if (crashed) {
-			crash(!cmdarg().getBoolValue())
-		}
-	});
-
-	# the attitude indicator needs pressure
-	# settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
-
-	main_loop();
+    Fuel_Density=props.globals.getNode("/consumables/fuel/tank/density-ppg").getValue();
+    setprop("/instrumentation/clock/flight-meter-hour",0);
+    RPM_arm.setBoolValue(0);
+    print("Systems ... Check");
+    settimer(update_systems,2);
+    setprop("sim/model/sound/volume", 0.5);
 });
 
+setlistener("/sim/signals/reinit", func {
+    RPM_arm.setBoolValue(0);
+    setprop("/controls/engines/engine/throttle",1);
+});
 
+setlistener("/sim/current-view/view-number", func(vw) {
+    var nm = vw.getValue();
+    setprop("sim/model/sound/volume", 1.0);
+    if(nm == 0 or nm == 7)setprop("sim/model/sound/volume", 0.5);
+},1,0);
+
+setlistener("/gear/gear[1]/wow", func(gr) {
+    if(gr.getBoolValue()){
+    FHmeter.stop();
+    }else{FHmeter.start();}
+},0,0);
+
+setlistener("/engines/engine/out-of-fuel", func(fl) {
+    var nofuel = fl.getBoolValue();
+    if(nofuel)kill_engine();
+},0,0);
+
+setlistener("/controls/electric/key", func(key){
+    var key = key.getValue();
+    if(key == 0)kill_engine();
+},0,0);
+
+# setlistener("/sim/crashed", func(ko) {
+#     if(ko.getValue()){
+#     kill_engine();
+#     setprop("/rotors/main/rpm",0);
+#     setprop("/rotors/tail/rpm",0);
+#     }
+# },0,0);
+
+setlistener("/sim/model/start-idling", func(idle){
+    var run= idle.getBoolValue();
+    if(run){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
+
+setlistener("controls/engines/engine[0]/clutch", func(clutch){
+    var clutch= clutch.getBoolValue();
+    if(clutch and props.globals.getNode("/engines/engine/running",1).getBoolValue()){
+      setprop("/engines/engine/clutch-engaged",1);
+    }else{
+      setprop("/engines/engine/clutch-engaged",0);
+    }
+},0,0);
+
+var Startup = func{
+  setprop("controls/electric/engine[0]/generator",1);
+  setprop("controls/electric/battery-switch",1);
+  setprop("controls/lighting/nav-lights",1);
+  setprop("controls/lighting/beacon",1);
+  setprop("controls/lighting/strobe",1);
+  setprop("controls/engines/engine[0]/magnetos",3);
+  setprop("engines/engine[0]/running",1);
+  setprop("controls/engines/engine[0]/clutch",1);
+}
+
+var Shutdown = func{
+  setprop("controls/electric/engine[0]/generator",0);
+  setprop("controls/electric/battery-switch",0);
+  setprop("controls/lighting/instrument-lights",0);
+  setprop("controls/lighting/nav-lights",0);
+  setprop("controls/lighting/beacon",0);
+  setprop("controls/engines/engine[0]/magnetos",0);
+  setprop("controls/engines/engine[0]/clutch",1);
+}
+
+var flight_meter = func{
+  var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
+  var fminute = fmeter * 0.016666;
+  var fhour = fminute * 0.016666;
+  setprop("/instrumentation/clock/flight-meter-hour",fhour);
+}
+
+var kill_engine=func{
+        setprop("/controls/engines/engine/magnetos",0);
+        setprop("/engines/engine/clutch-engaged",0);
+        setprop("/engines/engine/running",0);
+        start_timer=0;
+}
+
+var update_fuel = func{
+    var amnt = arg[0] * GPS;
+    amnt = amnt * 0.5;
+    var lvl = Fuel1_Level.getValue();
+    var lvl2 = Fuel2_Level.getValue();
+    lvl = lvl-amnt;
+    if(lvl2 > 0){lvl2 = lvl2-amnt;
+    }else{
+    lvl = lvl-amnt;
+    }
+    if(lvl < 0.0)lvl = 0.0;
+    if(lvl2 < 0.0)lvl2 = 0.0;
+    var ttl = lvl+lvl2;
+    Fuel1_Level.setDoubleValue(lvl);
+    Fuel1_LBS.setDoubleValue(lvl * Fuel_Density);
+    Fuel2_Level.setDoubleValue(lvl2);
+    Fuel2_LBS.setDoubleValue(lvl2 * Fuel_Density);
+    TotalFuelG.setDoubleValue(ttl);
+    TotalFuelP.setDoubleValue(ttl * Fuel_Density);
+    if(ttl < 0.2){
+        if(!NoFuel.getBoolValue()){
+            NoFuel.setBoolValue(1);
+        }
+    }
+}
+
+var update_systems = func {
+    var time = getprop("/sim/time/elapsed-sec");
+    var dt = time - last_time;
+    last_time = time;
+    var throttle = getprop("/controls/rotor/engine-throttle");
+    if(getprop("engines/engine/running"))update_fuel(dt);
+    flight_meter();
+    if(!RPM_arm.getBoolValue()){
+    if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
+}
+
+if(getprop("/systems/electrical/outputs/starter") > 11){
+    if(getprop("/controls/electric/key") > 2){
+      setprop("/engines/engine/cranking",1);
+    }
+    if(getprop("/controls/engines/engine/clutch")){
+      setprop("/engines/engine/clutch-engaged",1);
+    } else {
+      setprop("/engines/engine/clutch-engaged",0);
+    }
+}else{
+    setprop("/engines/engine/cranking",0);
+}
+
+if(getprop("/engines/engine/cranking") != 0){
+    if(!getprop("/engines/engine/running")){
+    start_timer +=1;
+    }else{start_timer = 0;}
+}
+
+if(start_timer > 40){
+    setprop("/engines/engine/running",1);
+    start_timer = 0;
+    }
+
+if(getprop("/engines/engine/running")){
+  if(getprop("/engines/engine/amp-v") > 0){
+    if(getprop("/engines/engine/clutch-engaged")){
+        interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
+        interpolate("/rotors/tail/rpm", 2700 * throttle, 0.9);
+    }else{
+        interpolate("/rotors/main/rpm", 0, 0.2);
+        interpolate("/rotors/tail/rpm", 0, 0.2);
+    }
+    interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
+  } else {
+    if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
+        setprop("/engines/engine/clutch-engaged",0);
+        setprop("/engines/engine/running",0);
+    }
+  }
+}else{
+  interpolate("/engines/engine/rpm", 0, 0.8);
+  interpolate("/rotors/main/rpm", 0, 0.4);
+  interpolate("/rotors/tail/rpm", 0, 0.4);
+}
+settimer(update_systems,0);
+}

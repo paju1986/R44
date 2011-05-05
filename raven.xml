@@ -116,7 +116,8 @@
              engine-accel-limit="3"
              yasimdragfactor="10"
              yasimliftfactor="140">
-             <control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>
+             <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
+             <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
              <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
   </rotorgear>
 

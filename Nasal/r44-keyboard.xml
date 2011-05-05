@@ -10,7 +10,6 @@
       <script>r44.sas.toggleEnable();</script>
     </binding>
   </key>
-
   
   <key n="5">
     <name>Ctrl-e</name>
@@ -20,7 +19,6 @@
       <script>r44.cas.toggleEnable();</script>
     </binding>
   </key>
-
   
   <key n="6">
     <name>Ctrl-f</name>
@@ -81,7 +79,7 @@
     <desc>Start Engines</desc>
     <binding>
       <command>nasal</command>
-      <script>r44.engines(1)</script>
+      <script>r44.Startup()</script>
     </binding>
   </key>
 
@@ -90,7 +88,7 @@
     <desc>Shutdown Engines</desc>
     <binding>
       <command>nasal</command>
-      <script>r44.engines(0)</script>
+      <script>r44.Shutdown()</script>
     </binding>
   </key>
 

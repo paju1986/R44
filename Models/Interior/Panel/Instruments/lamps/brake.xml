@@ -14,10 +14,10 @@
     <object-name>lampon</object-name>
     <condition>
       <and>
-        <equals>
-          <property>/controls/lighting/turn-off-light</property>
-          <value> true </value>
-        </equals>
+        <greater-than>
+          <property>/controls/rotor/brake</property>
+          <value>0.0</value>
+        </greater-than>
         <greater-than>
           <property>/systems/electrical/outputs/instrument-lights</property>
           <value>0.0001</value>
@@ -43,8 +43,8 @@
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
-    <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
   </animation>
 
 </PropertyList>

@@ -9,15 +9,67 @@
     <object-name>key</object-name>
   </animation>
 
-  <!-- Key Switch -->
   <animation>
-    <type>pick</type>
-    <object-name>key</object-name>
+   <type>pick</type>
+   <object-name>key</object-name>
     <action>
       <button>0</button>
+        <binding>
+          <condition>
+            <equals>
+                <property>controls/electric/key</property>
+                <value>4</value>
+            </equals>
+          </condition>
+          <command>property-assign</command>
+          <property>controls/engines/engine/starter</property>
+          <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/engines/engine/starter</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+
+      <binding>
+        <condition>
+          <less-than-equals>
+            <property>controls/electric/key</property>
+            <value>3</value>
+          </less-than-equals>
+        </condition>
+        <command>property-adjust</command>
+        <property>controls/electric/key</property>
+        <step>1</step>
+        <min>0</min>
+        <max>4</max>
+        <wrap>0</wrap>
+      </binding>
       <binding>
         <command>property-toggle</command>
-        <property>controls/engines/engine/magnetos</property>
+        <property>sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <object-name>key</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/electric/key</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
       </binding>
     </action>
   </animation>
@@ -25,17 +77,34 @@
   <animation>
     <type>rotate</type>
     <object-name>key</object-name>
-    <property>controls/engines/engine/magnetos</property>
-    <factor> -30 </factor>
+    <property>controls/electric/key</property>
+    <factor>-30</factor>
     <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
     </center>
     <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <property>controls/engines/engine/starter</property>
+    <factor>-30</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
     </axis>
   </animation>
 

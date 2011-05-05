@@ -80,7 +80,7 @@
 
     <presets>
       <onground type="bool">false</onground>
-      <altitude-agl-ft type="double">30.0</altitude-agl-ft>
+      <altitude-agl-ft type="double">30</altitude-agl-ft>
     </presets>
 
     <menubar include="Dialogs/copilot-menu.xml"/>

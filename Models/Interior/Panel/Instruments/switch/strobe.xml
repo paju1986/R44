@@ -9,15 +9,18 @@
     <object-name>switch</object-name>
   </animation>
 
-  <!-- Nav Switch -->
   <animation>
     <type>pick</type>
     <object-name>switch</object-name>
     <action>
       <button>0</button>
       <binding>
-        <command>property-toggle</command>
-        <property>controls/lighting/beacon</property>
+          <command>property-toggle</command>
+          <property>controls/lighting/beacon</property>
+      </binding>
+      <binding>
+          <command>property-toggle</command>
+          <property>sim/model/sound/click</property>
       </binding>
     </action>
   </animation>
