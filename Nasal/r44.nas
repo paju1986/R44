@@ -26,6 +26,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     print("Systems ... Check");
     settimer(update_systems,2);
     setprop("sim/model/sound/volume", 0.5);
+    setprop("/instrumentation/doors/Rcrew/position-norm",1);
 });
 
 setlistener("/sim/signals/reinit", func {

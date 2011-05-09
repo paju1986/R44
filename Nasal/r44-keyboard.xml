@@ -29,21 +29,14 @@
     </binding>
   </key>
 
-  <key n="68">
-    <name>D</name>
-    <desc>Passenger door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.doorsystem.passengerexport();</script>
-    </binding>
-  </key>
-
   <key n="100">
     <name>d</name>
-    <desc>Crew door</desc>
+    <desc>Close pilot door</desc>
     <binding>
       <command>nasal</command>
-      <script>doors.doorsystem.crewexport();</script>
+      <script>
+      setprop("/instrumentation/doors/Rcrew/position-norm",0);
+      </script>
     </binding>
   </key>
 

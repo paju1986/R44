@@ -52,6 +52,10 @@
         <desc>Shutdown engines</desc>
       </key>
       <key>
+        <name>d</name>
+        <desc>Close pilot door</desc>
+      </key>
+      <key>
         <name>R</name>
         <desc>Toggle rotor brake</desc>
       </key>
