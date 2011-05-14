@@ -16,6 +16,22 @@
   </view>
 
   <view n="100">
+    <name>Panel view</name>
+    <internal archive="y">true</internal>
+    <type>lookfrom</type>
+    <config>
+      <dynamic-view type="bool">true</dynamic-view>
+      <from-model type="bool">true</from-model>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y">  0.000 </x-offset-m> <!--right-->
+      <y-offset-m archive="y"> -0.510 </y-offset-m> <!--up-->
+      <z-offset-m archive="y"> -3.864 </z-offset-m> <!--back-->
+      <pitch-offset-deg> -33 </pitch-offset-deg>
+      <default-field-of-view-deg> 60 </default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="101">
     <name>Copilot View</name>
     <internal archive="y">true</internal>
     <type>lookfrom</type>
@@ -31,7 +47,7 @@
     </config>
   </view>
 
-  <view n="101">
+  <view n="102">
     <name>Tail Camera View</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>
@@ -47,7 +63,7 @@
     </config>
   </view>
 
-  <view n="102">
+  <view n="103">
     <name>Rotor view</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>

@@ -39,8 +39,10 @@
     <object-name>porteBD</object-name>
     <object-name>pate</object-name>
     <object-name>derive</object-name>
+    <object-name>lights</object-name>
 
     <object-name>trous</object-name>
+    <object-name>echappe</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
@@ -49,6 +51,8 @@
     <object-name>vitreAD</object-name>
     <object-name>vitreBG</object-name>
     <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
   </animation>
 
   <animation>
@@ -63,8 +67,10 @@
     <object-name>porteBD</object-name>
     <object-name>pate</object-name>
     <object-name>derive</object-name>
+    <object-name>lights</object-name>
 
     <object-name>trous</object-name>
+    <object-name>echappe</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -112,6 +118,7 @@
     <object-name>porteBD</object-name>
     <object-name>pate</object-name>
     <object-name>derive</object-name>
+    <object-name>lights</object-name>
   </effect>
 
   <animation>
@@ -133,6 +140,8 @@
     <object-name>vitreAD</object-name>
     <object-name>vitreBG</object-name>
     <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
   </animation>
 
   <!-- Immatriculatoin -->
@@ -386,6 +395,59 @@
       <z-m> 0.416 </z-m>
     </offsets>
   </model>
+
+  <model>
+    <path>Aircraft/R44/Models/light/RedLight.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m> -0.588 </y-m>
+      <z-m> -0.983 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/light/GreenLight.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.588 </y-m>
+      <z-m> -0.983 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Wing light cone -->
+  <model>
+    <name>Taxi-LightL</name>
+    <path>Aircraft/R44/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>         -4.525 </x-m>
+      <y-m>         -0.076 </y-m>
+      <z-m>         -0.857 </z-m>
+      <heading-deg> 10.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Taxi-LightR</name>
+    <path>Aircraft/R44/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>          -4.525 </x-m>
+      <y-m>           0.076 </y-m>
+      <z-m>          -0.857 </z-m>
+      <heading-deg> -10.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Taxi-LightL</object-name>
+    <object-name>Taxi-LightR</object-name>
+    <condition>
+      <equals>
+        <property>controls/lighting/nav-lights</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
 
 </PropertyList>
 
