@@ -56,13 +56,18 @@ setlistener("/controls/electric/key", func(key){
     if(key == 0)kill_engine();
 },0,0);
 
-# setlistener("/sim/crashed", func(ko) {
-#     if(ko.getValue()){
-#     kill_engine();
-#     setprop("/rotors/main/rpm",0);
-#     setprop("/rotors/tail/rpm",0);
-#     }
-# },0,0);
+setlistener("controls/engines/engine[0]/clutch", func(clutch){
+    var clutch= clutch.getBoolValue();
+    if(clutch and props.globals.getNode("/engines/engine/running",1).getBoolValue()){
+      setprop("/engines/engine/clutch-engaged",1);
+    }else{
+      setprop("/engines/engine/clutch-engaged",0);
+    }
+},0,0);
+
+##############################################
+######### AUTOSTART / AUTOSHUTDOWN ###########
+##############################################
 
 setlistener("/sim/model/start-idling", func(idle){
     var run= idle.getBoolValue();
@@ -73,35 +78,27 @@ setlistener("/sim/model/start-idling", func(idle){
     }
 },0,0);
 
-setlistener("controls/engines/engine[0]/clutch", func(clutch){
-    var clutch= clutch.getBoolValue();
-    if(clutch and props.globals.getNode("/engines/engine/running",1).getBoolValue()){
-      setprop("/engines/engine/clutch-engaged",1);
-    }else{
-      setprop("/engines/engine/clutch-engaged",0);
-    }
-},0,0);
-
-var Startup = func{
-  setprop("controls/electric/engine[0]/generator",1);
-  setprop("controls/electric/battery-switch",1);
-  setprop("controls/lighting/nav-lights",1);
-  setprop("controls/lighting/beacon",1);
-  setprop("controls/lighting/strobe",1);
-  setprop("controls/engines/engine[0]/magnetos",3);
-  setprop("engines/engine[0]/running",1);
-  setprop("controls/engines/engine[0]/clutch",1);
+var Startup = func {
+  setprop("/controls/electric/battery-switch",1);
+  setprop("/controls/electric/engine/generator",1);
+  setprop("/controls/electric/key",4);
+  setprop("/engines/engine/rpm",2700);
+  setprop("/engines/engine/running",1);
+  setprop("/controls/engines/engine/clutch",1);
 }
 
-var Shutdown = func{
-  setprop("controls/electric/engine[0]/generator",0);
-  setprop("controls/electric/battery-switch",0);
-  setprop("controls/lighting/instrument-lights",0);
-  setprop("controls/lighting/nav-lights",0);
-  setprop("controls/lighting/beacon",0);
-  setprop("controls/engines/engine[0]/magnetos",0);
-  setprop("controls/engines/engine[0]/clutch",1);
+var Shutdown = func {
+  setprop("/controls/electric/battery-switch",0);
+  setprop("/controls/electric/engine/generator",0);
+  setprop("/controls/electric/key",0);
+  setprop("/engines/engine/rpm",0);
+  setprop("/engines/engine/running",0);
+  setprop("/controls/engines/engine/clutch",0);
 }
+
+###############################################
+###############################################
+###############################################
 
 var flight_meter = func{
   var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
@@ -144,60 +141,60 @@ var update_fuel = func{
 }
 
 var update_systems = func {
-    var time = getprop("/sim/time/elapsed-sec");
-    var dt = time - last_time;
-    last_time = time;
-    var throttle = getprop("/controls/rotor/engine-throttle");
-    if(getprop("engines/engine/running"))update_fuel(dt);
-    flight_meter();
-    if(!RPM_arm.getBoolValue()){
-    if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
-}
+	var time = getprop("/sim/time/elapsed-sec");
+	var dt = time - last_time;
+	last_time = time;
+	var throttle = getprop("/controls/rotor/engine-throttle");
+	if(getprop("engines/engine/running"))update_fuel(dt);
+	flight_meter();
+	if(!RPM_arm.getBoolValue()){
+	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
+	}
 
-if(getprop("/systems/electrical/outputs/starter") > 11){
-    if(getprop("/controls/electric/key") > 2){
-      setprop("/engines/engine/cranking",1);
-    }
-    if(getprop("/controls/engines/engine/clutch")){
-      setprop("/engines/engine/clutch-engaged",1);
-    } else {
-      setprop("/engines/engine/clutch-engaged",0);
-    }
-}else{
-    setprop("/engines/engine/cranking",0);
-}
+	if(getprop("/systems/electrical/outputs/starter") > 11){
+	    if(getprop("/controls/electric/key") > 2){
+	      setprop("/engines/engine/cranking",1);
+	    }
+	    if(getprop("/controls/engines/engine/clutch")){
+	      setprop("/engines/engine/clutch-engaged",1);
+	    } else {
+	      setprop("/engines/engine/clutch-engaged",0);
+	    }
+	}else{
+	    setprop("/engines/engine/cranking",0);
+	}
 
-if(getprop("/engines/engine/cranking") != 0){
-    if(!getprop("/engines/engine/running")){
-    start_timer +=1;
-    }else{start_timer = 0;}
-}
+	if(getprop("/engines/engine/cranking") != 0){
+	    if(!getprop("/engines/engine/running")){
+	    start_timer +=1;
+	    }else{start_timer = 0;}
+	}
 
-if(start_timer > 40){
-    setprop("/engines/engine/running",1);
-    start_timer = 0;
-    }
+	if(start_timer > 40){
+	    setprop("/engines/engine/running",1);
+	    start_timer = 0;
+	    }
 
-if(getprop("/engines/engine/running")){
-  if(getprop("/engines/engine/amp-v") > 0){
-    if(getprop("/engines/engine/clutch-engaged")){
-        interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
-        interpolate("/rotors/tail/rpm", 2700 * throttle, 0.9);
-    }else{
-        interpolate("/rotors/main/rpm", 0, 0.2);
-        interpolate("/rotors/tail/rpm", 0, 0.2);
-    }
-    interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
-  } else {
-    if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
-        setprop("/engines/engine/clutch-engaged",0);
-        setprop("/engines/engine/running",0);
-    }
-  }
-}else{
-  interpolate("/engines/engine/rpm", 0, 0.8);
-  interpolate("/rotors/main/rpm", 0, 0.4);
-  interpolate("/rotors/tail/rpm", 0, 0.4);
-}
-settimer(update_systems,0);
+	if(getprop("/engines/engine/running")){
+	  if(getprop("/engines/engine/amp-v") > 0){
+	    if(getprop("/engines/engine/clutch-engaged")){
+		interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
+		interpolate("/rotors/tail/rpm", 2700 * throttle, 0.9);
+	    }else{
+		interpolate("/rotors/main/rpm", 0, 0.2);
+		interpolate("/rotors/tail/rpm", 0, 0.2);
+	    }
+	    interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
+	  } else {
+	    if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
+		setprop("/engines/engine/clutch-engaged",0);
+		setprop("/engines/engine/running",0);
+	    }
+	  }
+	}else{
+	  interpolate("/engines/engine/rpm", 0, 0.8);
+	  interpolate("/rotors/main/rpm", 0, 0.4);
+	  interpolate("/rotors/tail/rpm", 0, 0.4);
+	}
+	settimer(update_systems,0);
 }

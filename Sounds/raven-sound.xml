@@ -128,7 +128,7 @@ baboon922@hotmail.com
 		<engine-internal>
 			<name>engine-internal</name>
 			<mode>looped</mode>
-			<path>BaBoOn-R44-Engine-Internal.wav</path>
+			<path>Aircraft/R44/Sounds/BaBoOn-R44-Engine-Internal.wav</path>
 				<reference-dist>4.0</reference-dist>
 				<max-dist>10.0</max-dist>
 				<condition>
