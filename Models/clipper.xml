@@ -24,8 +24,12 @@
 
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/R44/Models/shadowC.xml</path>
+  </model>
+
+  <!-- Poussière au sol -->
+  <model>
+    <path>Aircraft/R44/Models/Effects/Ground/rotor-particle.xml</path>
   </model>
 
 </PropertyList>

@@ -30,12 +30,7 @@
     <type>rotate</type>
     <object-name>AllShadow</object-name>
     <property>/orientation/pitch-deg</property>
-    <factor>-1.0</factor>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
+    <factor> -1 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -48,12 +43,7 @@
     <type>rotate</type>
     <object-name>AllShadow</object-name>
     <property>/orientation/roll-deg</property>
-    <factor>1.0</factor>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
+    <factor> 1 </factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
@@ -65,13 +55,9 @@
   <animation>
    <type>translate</type>
    <object-name>AllShadow</object-name>
-   <property>/position/gear-agl-ft</property>
-   <factor>-0.3</factor>
-   <center>
-     <x-m> 0 </x-m>
-     <y-m> 0 </y-m>
-     <z-m> 0 </z-m>
-   </center>
+   <!--<property>position/gear-agl-ft</property>-->
+   <property>sim/multiplay/generic/float[2]</property>
+   <factor> -1 </factor>
    <axis>
      <x> 0 </x>
      <y> 0 </y>

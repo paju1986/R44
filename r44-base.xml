@@ -82,15 +82,16 @@
     <!-- ############################### -->
     <!-- ######## DUAL CONTROL ######### -->
     <remote>
-     <pilot-callsign type="string"></pilot-callsign>
+      <pilot-callsign type="string"></pilot-callsign>
     </remote>
 
     <multiplay>
      <generic>
-	<float n="5" alias="/controls/flight/rudder"/>
-	<float n="6" alias="/controls/flight/elevator"/>
-	<float n="7" alias="/controls/flight/aileron"/>
-	<float n="8" alias="/controls/engines/engine/throttle"/>
+       <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow and smoke -->
+	     <float n="5" alias="/controls/flight/rudder"/>
+	     <float n="6" alias="/controls/flight/elevator"/>
+	     <float n="7" alias="/controls/flight/aileron"/>
+	     <float n="8" alias="/controls/engines/engine/throttle"/>
      </generic>
     </multiplay>
     <!-- ######## DUAL CONTROL ######### -->
