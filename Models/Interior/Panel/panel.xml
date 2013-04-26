@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Based on R22 panel for tye moment -->
 <PropertyList>
@@ -12,12 +12,21 @@
     <object-name>Yokeshaft</object-name>
     <object-name>Collective</object-name>
     <object-name>Labels</object-name>
-    <object-name>Clutch.guard</object-name>
     <object-name>LHpedal</object-name>
     <object-name>RHpedal</object-name>
     <object-name>alt.annun</object-name>
 
     <!-- Objets transparents -->
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>alt.annun</object-name>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
   </animation>
 
   <model>
@@ -352,4 +361,3 @@
   </model>
 
 </PropertyList>
-

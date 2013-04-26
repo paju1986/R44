@@ -7,7 +7,7 @@ OBJECT poly
 name "Clutch.guard"
 data 12
 Clutch.guard
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 45.000000
 numvert 80
@@ -441,7 +441,7 @@ OBJECT poly
 name "Clutch.switch"
 data 13
 Clutch.switch
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 45.000000
 numvert 33
@@ -700,7 +700,7 @@ OBJECT poly
 name "Clutch.switch0"
 data 14
 Clutch.switch0
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 30.000000
 numvert 49
@@ -1119,7 +1119,7 @@ OBJECT poly
 name "panel.004"
 data 9
 panel.004
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 30.000000
 numvert 8

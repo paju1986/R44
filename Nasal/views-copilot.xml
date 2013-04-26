@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -64,37 +64,37 @@
 
   <view n="1">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 
   <view n="2">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 
   <view n="3">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 
   <view n="4">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 
   <view n="5">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 
   <view n="6">
     <config>
-      <target-z-offset-m archive="y" type="double">0</target-z-offset-m>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
     </config>
   </view>
 

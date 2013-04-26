@@ -7,7 +7,7 @@ OBJECT poly
 name "dimmer"
 data 6
 dimmer
-texture "colors.png"
+texture "dimmer.png"
 texrep 1 1
 crease 30.000000
 numvert 25

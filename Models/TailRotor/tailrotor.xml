@@ -18,9 +18,6 @@
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.115 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -31,8 +28,6 @@
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.115 </z-m>
-      <roll-deg>      0 </roll-deg>
-      <pitch-deg>     0 </pitch-deg>
       <heading-deg> 180 </heading-deg>
     </offsets>
   </model>
@@ -63,11 +58,6 @@
     <type>rotate</type>
     <object-name>rotorcomplet</object-name>
     <property>/rotors/tail/blade[0]/position-deg</property>
-    <center>
-       <x-m> 0 </x-m>
-       <y-m> 0 </y-m>
-       <z-m> 0 </z-m>
-    </center>
     <axis>
       <x>  0 </x>
       <y>  0 </y>
@@ -79,11 +69,6 @@
     <type>spin</type>
     <object-name>rotorcomplet</object-name>
     <property>rotors/tail/rpm</property>
-    <center>
-       <x-m> 0 </x-m>
-       <y-m> 0 </y-m>
-       <z-m> 0 </z-m>
-    </center>
     <axis>
       <x>  0 </x>
       <y>  0 </y>
@@ -92,4 +77,3 @@
   </animation>
   
 </PropertyList>
-

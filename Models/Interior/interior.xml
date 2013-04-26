@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -41,14 +41,22 @@
     <object-name>intvitreBD</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreAG</object-name>
+    <object-name>intvitreAD</object-name>
+    <object-name>intvitreBG</object-name>
+    <object-name>intvitreBD</object-name>
+  </effect>
+
   <!-- Les sièges -->
   <model>
     <path>Aircraft/R44/Models/Interior/seat/4seats.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Pilote -->
@@ -66,7 +74,7 @@
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -3.636 </x-m>
-      <y-m> 0.252 </y-m>
+      <y-m>  0.252 </y-m>
       <z-m> -0.711 </z-m>
     </offsets>
   </model>
@@ -223,4 +231,3 @@
   </animation>
 
 </PropertyList>
-

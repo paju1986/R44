@@ -7,7 +7,7 @@ OBJECT poly
 name "fond"
 data 4
 fond
-texture "colors.png"
+texture "magneto.png"
 texrep 1 1
 crease 30.000000
 numvert 49
@@ -390,7 +390,7 @@ OBJECT poly
 name "key"
 data 3
 key
-texture "colors.png"
+texture "magneto.png"
 texrep 1 1
 crease 30.000000
 numvert 39

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -26,9 +26,6 @@
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -39,8 +36,6 @@
       <x-m> 0.000 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>      0 </roll-deg>
-      <pitch-deg>     0 </pitch-deg>
       <heading-deg> 180 </heading-deg>
     </offsets>
   </model>
@@ -88,11 +83,6 @@
     <object-name>Ensemble</object-name>
     <property>rotors/main/rpm</property>
     <factor> 1 </factor>
-    <center>
-       <x-m> 0 </x-m>
-       <y-m> 0 </y-m>
-       <z-m> 0 </z-m>
-    </center>
     <axis>
       <x>  0 </x>
       <y>  0 </y>
@@ -101,4 +91,3 @@
   </animation>
 
 </PropertyList>
-

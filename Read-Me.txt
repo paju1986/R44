@@ -28,6 +28,7 @@ Thanks
 ===============
 BARANGER Emmanuel
 March, 28, 2011.
+April, 26, 2013.
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
@@ -62,6 +63,7 @@ Remerciements
 ===============
 BARANGER Emmanuel
 28 Mars 2011.
+26 Avril 2013.
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr

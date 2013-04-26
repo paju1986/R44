@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -25,6 +25,21 @@
     <object-name>shadowrotor</object-name>
   </animation>
 
+   <animation>
+     <type>select</type>
+     <object-name>AllShadow</object-name>
+     <condition>
+       <and>
+         <not>
+           <property>sim/freeze/replay-state</property>
+         </not>
+         <not>
+           <property>sim/rendering/shadows/enabled</property>
+         </not>
+       </and>
+     </condition>
+   </animation>
+   
   <!-- pitch -->
   <animation>
     <type>rotate</type>
@@ -55,7 +70,6 @@
   <animation>
    <type>translate</type>
    <object-name>AllShadow</object-name>
-   <!--<property>position/gear-agl-ft</property>-->
    <property>sim/multiplay/generic/float[2]</property>
    <factor> -1 </factor>
    <axis>

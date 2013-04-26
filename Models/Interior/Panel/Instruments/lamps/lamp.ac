@@ -7,7 +7,7 @@ OBJECT poly
 name "lampoff"
 data 7
 lampoff
-texture "colors.png"
+texture "lamps.png"
 texrep 1 1
 crease 30.000000
 numvert 513
@@ -4082,7 +4082,7 @@ OBJECT poly
 name "lampon"
 data 6
 lampon
-texture "colors.png"
+texture "lamps.png"
 texrep 1 1
 crease 30.000000
 numvert 513

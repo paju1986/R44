@@ -7,7 +7,7 @@ OBJECT poly
 name "fond"
 data 4
 fond
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -60,7 +60,7 @@ OBJECT poly
 name "switch"
 data 6
 switch
-texture "colors.png"
+texture "switch.png"
 texrep 1 1
 crease 30.000000
 numvert 16
