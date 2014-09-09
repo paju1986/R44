@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>rpm.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>Eneedle</object-name>
+    <object-name>Rneedle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>Eneedle</object-name>
+    <object-name>Rneedle</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Eneedle</object-name>
+    <property>engines/engine/rpm</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1250 </ind><dep> 11 </dep></entry>
+      <entry><ind> 2900 </ind><dep> 88 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.027 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rneedle</object-name>
+    <property>rotors/main/rpm</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 265 </ind><dep> 11 </dep></entry>
+      <entry><ind> 615 </ind><dep> 88 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.027 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

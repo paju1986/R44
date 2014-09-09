@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Robinson R44</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Blades visible</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "rotors/main/bladesvisible";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Blades visible " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>r44.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Select MP-pilot</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type);
+          </script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>
+

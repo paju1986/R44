@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="3">
+      <name>Left Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="4">
+      <name>Load</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>800</max-lb>
+    </weight>
+
+    <help>
+      <title>R44 - background and help</title>
+      <line></line>
+      <key>
+        <name>{</name>
+        <desc>Start engines</desc>
+      </key>
+      <key>
+        <name>}</name>
+        <desc>Shutdown engines</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Close pilot door</desc>
+      </key>
+      <key>
+        <name>R</name>
+        <desc>Toggle rotor brake</desc>
+      </key>
+      <key>
+        <name>r</name>
+        <desc>Apply rotor brake</desc>
+      </key>
+      <key>
+        <name>Ctrl d</name>
+        <desc>Toggle S.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl e</name>
+        <desc>Toggle C.A.S.</desc>
+      </key>
+      <key>
+        <name>Ctrl f</name>
+        <desc>Auto hover</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/r44-menu.xml"/>
+
+    <!-- ############################### -->
+    <!-- ######## DUAL CONTROL ######### -->
+    <remote>
+      <pilot-callsign type="string"></pilot-callsign>
+    </remote>
+
+    <multiplay>
+     <generic>
+       <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow and smoke -->
+	     <float n="5" alias="/controls/flight/rudder"/>
+	     <float n="6" alias="/controls/flight/elevator"/>
+	     <float n="7" alias="/controls/flight/aileron"/>
+	     <float n="8" alias="/controls/engines/engine/throttle"/>
+     </generic>
+    </multiplay>
+    <!-- ######## DUAL CONTROL ######### -->
+    <!-- ############################### -->
+
+  </sim>
+
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+        <throttle>1.0</throttle>
+        <clutch type="bool">0</clutch>
+        <clutchguard type="bool">0</clutchguard>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <engine-throttle type="double">1.0</engine-throttle>
+      <brake>0</brake>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+    <flight>
+      <aileron-trim>0</aileron-trim>
+      <elevator-trim>0</elevator-trim>
+    </flight>
+  </controls>
+
+  <engines>
+    <engine>
+      <rpm type="double">0</rpm>
+      <running type="bool">false</running>
+      <clutch-engaged type="bool">false</clutch-engaged>
+    </engine>
+  </engines>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <instrumentation>
+    <gsdi>
+      <serviceable type="bool">true</serviceable>
+      <enabled type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <input>
+    <keyboard include="Nasal/r44-keyboard.xml"/>
+  </input>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/R44/Nasal/doors.nas</file>
+    </doors>
+    <r44>
+      <file>Aircraft/R44/Nasal/immat.nas</file>
+      <file>Aircraft/R44/Nasal/light.nas</file>
+      <file>Aircraft/R44/Nasal/r44.nas</file>
+      <file>Aircraft/R44/Nasal/rotoranimation.nas</file>
+      <file>Aircraft/R44/Nasal/electrical.nas</file>
+      <file>Aircraft/R44/Nasal/liveries.nas</file>
+      <file>Aircraft/R44/Nasal/bladevisible.nas</file>
+      <file>Aircraft/R44/Nasal/fcs-management.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>*
+    </r44>
+  </nasal>
+
+</PropertyList>
+

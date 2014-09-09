@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="r44-base.xml">
+
+  <sim>
+    <description>Robinson R44 Raven II (YASim)</description>
+    <author>Emmanuel BARANGER (3D)/JM-26 (FDM)</author>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">raven</aero>
+
+    <startup>
+      <splash-texture>Aircraft/R44/Splashs/raven-splash.png</splash-texture>
+    </startup> 
+
+    <sound>
+      <path>Aircraft/R44/Sounds/raven-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/R44/Models/raven.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <r44>
+        <state type="int">0</state>
+        <engine type="float">0.0</engine>
+        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+      </r44>
+    </model>
+  </sim>
+
+  <!-- ############################### -->
+  <!-- ######## DUAL CONTROL ######### -->
+  <nasal>
+    <dual_control_tools>
+      <file>Aircraft/R44/Nasal/dual-control-tools.nas</file>
+    </dual_control_tools>
+    <aircraft_dual_control>
+      <file>Aircraft/R44/Nasal/raven-dual-control.nas</file>
+    </aircraft_dual_control>
+    <dual_control>
+      <file>Aircraft/R44/Nasal/pilot-dual-control.nas</file>
+    </dual_control>
+  </nasal>
+  <!-- ######## DUAL CONTROL ######### -->
+  <!-- ############################### -->
+
+</PropertyList>

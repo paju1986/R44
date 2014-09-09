@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>r44.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/R44/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+    </load>
+
+    <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- Opaque -->
+    <object-name>fuselage</object-name>
+    <object-name>patins</object-name>
+    <object-name>supportlampe</object-name>
+    <object-name>protection</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <object-name>pate</object-name>
+    <object-name>derive</object-name>
+    <object-name>lights</object-name>
+
+    <object-name>trous</object-name>
+    <object-name>echappe</object-name>
+
+    <!-- Transparence -->
+    <object-name>vitres</object-name>
+    <object-name>verrelampe</object-name>
+    <object-name>vitreAG</object-name>
+    <object-name>vitreAD</object-name>
+    <object-name>vitreBG</object-name>
+    <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>patins</object-name>
+    <object-name>supportlampe</object-name>
+    <object-name>protection</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <object-name>pate</object-name>
+    <object-name>derive</object-name>
+    <object-name>lights</object-name>
+
+    <object-name>trous</object-name>
+    <object-name>echappe</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>patins</object-name>
+    <object-name>supportlampe</object-name>
+    <object-name>protection</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <object-name>pate</object-name>
+    <object-name>derive</object-name>
+    <object-name>lights</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>patins</object-name>
+    <object-name>supportlampe</object-name>
+    <object-name>protection</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <object-name>pate</object-name>
+    <object-name>derive</object-name>
+    <object-name>lights</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>vitreAG</object-name>
+    <object-name>vitreAD</object-name>
+    <object-name>vitreBG</object-name>
+    <object-name>vitreBD</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>verrelampe</object-name>
+    <object-name>vitreAG</object-name>
+    <object-name>vitreAD</object-name>
+    <object-name>vitreBG</object-name>
+    <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>verrelampe</object-name>
+    <object-name>vitreAG</object-name>
+    <object-name>vitreAD</object-name>
+    <object-name>vitreBG</object-name>
+    <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
+  </effect>
+
+  <!-- Immatriculatoin -->
+  <model>
+    <path>Aircraft/R44/Models/Immat/immat.xml</path>
+  </model>
+
+  <animation>
+    <type>material</type>
+    <object-name>ImatFuselageL1</object-name>
+    <object-name>ImatFuselageL2</object-name>
+    <object-name>ImatFuselageL3</object-name>
+    <object-name>ImatFuselageL4</object-name>
+    <object-name>ImatFuselageL5</object-name>
+    <object-name>ImatFuselageL6</object-name>
+    <object-name>ImatFuselageR1</object-name>
+    <object-name>ImatFuselageR2</object-name>
+    <object-name>ImatFuselageR3</object-name>
+    <object-name>ImatFuselageR4</object-name>
+    <object-name>ImatFuselageR5</object-name>
+    <object-name>ImatFuselageR6</object-name>
+    <object-name>ImatPanel1</object-name>
+    <object-name>ImatPanel2</object-name>
+    <object-name>ImatPanel3</object-name>
+    <object-name>ImatPanel4</object-name>
+    <object-name>ImatPanel5</object-name>
+    <object-name>ImatPanel6</object-name>
+
+    <property-base>sim/model/livery-font</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>immat.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <!-- Intérieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/R44/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+
+  <!-- Rotor principale -->
+  <model>
+    <path>Aircraft/R44/Models/MainRotor/mainrotor.xml</path>
+    <offsets>
+      <x-m> -2.218 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.410 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Rotor de queue -->
+  <model>
+    <path>Aircraft/R44/Models/TailRotor/tailrotor.xml</path>
+    <offsets>
+      <x-m>  3.609 </x-m>
+      <y-m> -0.247 </y-m>
+      <z-m>  0.395 </z-m>
+      <roll-deg>   90 </roll-deg>
+    </offsets>
+  </model>
+
+  <!-- Ouverture/fermeture des portes -->
+  <animation>
+    <name>PorteAvantGauche</name>
+    <object-name>porteAG</object-name>
+    <object-name>vitreAG</object-name>
+  </animation>
+
+  <animation>
+    <name>PorteAvantDroite</name>
+    <object-name>porteAD</object-name>
+    <object-name>vitreAD</object-name>
+  </animation>
+
+  <animation>
+    <name>PorteArriereGauche</name>
+    <object-name>porteBG</object-name>
+    <object-name>vitreBG</object-name>
+  </animation>
+
+  <animation>
+    <name>PorteArriereDroite</name>
+    <object-name>porteBD</object-name>
+    <object-name>vitreBD</object-name>
+  </animation>
+
+  <!-- Porte avant gauche -->
+  <animation>
+    <type>pick</type>
+    <object-name>PorteAvantGauche</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.doorsystem.Lcrewexport();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteAvantGauche</object-name>
+    <property>instrumentation/doors/Lcrew/position-norm</property>
+    <factor> -80 </factor>
+    <axis>
+      <x1-m> -3.795 </x1-m>
+      <y1-m> -0.607 </y1-m>
+      <z1-m> -0.603 </z1-m>
+      <x2-m> -3.631 </x2-m>
+      <y2-m> -0.625 </y2-m>
+      <z2-m> -0.266 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Porte avant droite -->
+  <animation>
+    <type>pick</type>
+    <object-name>PorteAvantDroite</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.doorsystem.Rcrewexport();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteAvantDroite</object-name>
+    <property>instrumentation/doors/Rcrew/position-norm</property>
+    <factor> 80 </factor>
+    <axis>
+      <x1-m> -3.795 </x1-m>
+      <y1-m>  0.607 </y1-m>
+      <z1-m> -0.603 </z1-m>
+      <x2-m> -3.631 </x2-m>
+      <y2-m>  0.625 </y2-m>
+      <z2-m> -0.266 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Porte arriere gauche -->
+  <animation>
+    <type>pick</type>
+    <object-name>PorteArriereGauche</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.doorsystem.Lpassengerexport();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteArriereGauche</object-name>
+    <property>instrumentation/doors/Lpassenger/position-norm</property>
+    <factor> -80 </factor>
+    <axis>
+      <x1-m> -3.181 </x1-m>
+      <y1-m> -0.646 </y1-m>
+      <z1-m> -0.726 </z1-m>
+      <x2-m> -3.046 </x2-m>
+      <y2-m> -0.666 </y2-m>
+      <z2-m> -0.346 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Porte arriere droite -->
+  <animation>
+    <type>pick</type>
+    <object-name>PorteArriereDroite</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.doorsystem.Rpassengerexport();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteArriereDroite</object-name>
+    <property>instrumentation/doors/Rpassenger/position-norm</property>
+    <factor> 80 </factor>
+    <axis>
+      <x1-m> -3.181 </x1-m>
+      <y1-m>  0.646 </y1-m>
+      <z1-m> -0.726 </z1-m>
+      <x2-m> -3.046 </x2-m>
+      <y2-m>  0.666 </y2-m>
+      <z2-m> -0.346 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/R44/Models/light/beacon.xml</path>
+    <offsets>
+      <x-m> 2.161 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.416 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/light/RedLight.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m> -0.588 </y-m>
+      <z-m> -0.983 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/light/GreenLight.xml</path>
+    <offsets>
+      <x-m> -3.361 </x-m>
+      <y-m>  0.588 </y-m>
+      <z-m> -0.983 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Wing light cone -->
+  <model>
+    <name>Taxi-LightL</name>
+    <path>Aircraft/R44/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>         -4.525 </x-m>
+      <y-m>         -0.076 </y-m>
+      <z-m>         -0.857 </z-m>
+      <heading-deg> 10.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Taxi-LightR</name>
+    <path>Aircraft/R44/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m>          -4.525 </x-m>
+      <y-m>           0.076 </y-m>
+      <z-m>          -0.857 </z-m>
+      <heading-deg> -10.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Taxi-LightL</object-name>
+    <object-name>Taxi-LightR</object-name>
+    <condition>
+      <equals>
+        <property>controls/lighting/nav-lights</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>
+

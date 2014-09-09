@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>copilot.ac</path>
+ 
+  <nasal>
+    <load>
+      cmdarg().getNode("sim/model/ac-type", 1).setValue("raven-copilot");
+
+      ##############################################################################
+      # The on-load Nasal is not executed when this file is loaded as the user
+      # aircraft.
+      ##############################################################################
+      var rplayer = cmdarg();
+      # Set up property aliases for animations.
+      rplayer.getNode("ai/models/multiplayer/controls/flight/rudder", 1).alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
+      rplayer.getNode("ai/models/multiplayer/controls/flight/elevator", 1).alias(rplayer.getNode("sim/multiplay/generic/float[1]"));
+      rplayer.getNode("ai/models/multiplayer/controls/flight/aileron", 1).alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+      rplayer.getNode("ai/models/multiplayer/controls/engines/engine/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+    </load>
+    <unload>
+      cmdarg().getNode("sim/model/ac-type", 1).setValue("");
+    </unload>
+  </nasal>
+
+</PropertyList>
+

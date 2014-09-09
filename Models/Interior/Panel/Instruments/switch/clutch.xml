@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>clutch.ac</path>
+
+  <animation>
+    <object-name>Clutch.guard</object-name>
+    <object-name>Clutch.switch</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Clutch.guard</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/clutchguard</property>
+      </binding>
+      <!--<binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+      </binding>-->
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Clutch.switch</object-name>
+    <action>
+      <condition>
+        <equals>
+          <property>controls/engines/engine/clutchguard</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/clutch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Clutch.guard</object-name>
+    <property>controls/engines/engine/clutchguard</property>
+    <factor> -80 </factor>
+    <center>
+      <x-m>  0.001 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.013 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Clutch.switch</object-name>
+    <property>controls/engines/engine/clutch</property>
+    <factor> 30 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

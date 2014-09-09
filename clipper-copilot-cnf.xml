@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="copilot-base.xml">
+
+  <sim>
+
+    <description>R44 Clipper Copilot (YASim)</description>
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config), DE L'HAMAIDE Clément (Dual Control)</author>
+    <flight-model>null</flight-model>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <startup>
+      <splash-texture>Aircraft/R44/Splashs/clipper-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/R44/Sounds/clipper-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/R44/Models/clipper-copilot.xml</path>
+      <variant type="int"> 0 </variant>
+    </model>
+
+  </sim>
+
+  <!-- ############################### -->
+  <!-- ######## DUAL CONTROL ######### -->
+  <nasal>
+    <dual_control_tools>
+      <file>Aircraft/R44/Nasal/dual-control-tools.nas</file>
+    </dual_control_tools>
+    <aircraft_dual_control>
+      <file>Aircraft/R44/Nasal/clipper-dual-control.nas</file>
+    </aircraft_dual_control>
+    <dual_control>
+      <file>Aircraft/R44/Nasal/copilot-dual-control.nas</file>
+    </dual_control>
+  </nasal>
+  <!-- ######## DUAL CONTROL ######### -->
+  <!-- ############################### -->
+
+</PropertyList>
