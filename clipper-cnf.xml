@@ -4,12 +4,14 @@
 
   <sim>
     <description>Robinson R44 Clipper (YASim)</description>
-    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <!--<author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author> in base.xml-->
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">clipper</aero>
 
     <startup>
       <splash-texture>Aircraft/R44/Splashs/clipper-splash.png</splash-texture>
+	  <splash-texture>Aircraft/R44/Splashs/clipper-splash1.png</splash-texture>
+	  <splash-texture>Aircraft/R44/Splashs/clipper-splash2.png</splash-texture>
     </startup> 
 
     <sound>
