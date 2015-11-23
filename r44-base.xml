@@ -4,7 +4,7 @@
 
   <sim include="Nasal/views.xml">
 
-    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config)</author>
+    <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config) REDPATH Jonathan (Splash) </author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
 
