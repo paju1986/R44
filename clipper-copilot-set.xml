@@ -6,8 +6,7 @@
 
     <description>Robinson R44 Clipper (copilot)</description>
     <author>BARANGER Emmanuel (3D), AUBERGER Jean Michel (FDM), BACON Guillaume (Sounds and Simulation Config), DE L'HAMAIDE Clément (Dual Control)</author>
-
+    <variant-of>clipper</variant-of>
   </sim>
 
 </PropertyList>
-
