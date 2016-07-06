@@ -40,7 +40,7 @@
         </livery>
         <livery-font>
           <name type="string">N7183C</name>
-          <texture>Liveries/N7183C-font.png</texture>
+          <texture>Liveries/Disabled.png</texture>
 <!--
           <diffuse>
             <red>   0.5 </red>
