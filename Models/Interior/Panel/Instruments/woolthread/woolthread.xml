@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>woolthread.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>woolthread</object-name>
+  <property>instrumentation/yawstring</property>
+  <factor>1</factor>
+ <offset>0</offset>
+ <min>-45</min>
+ <max>45</max>
+    <center>
+   <x>0.0</x>
+   <y>0.0</y>
+   <z>-0.1</z>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>-1</z>
+  </axis>
+ </animation>
+
+
+</PropertyList>
+
+

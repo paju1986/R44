@@ -58,12 +58,24 @@
   <model>
     <path>Aircraft/R44/Models/Interior/seat/4seats.xml</path>
   </model>
+  
+   <!-- Pilote -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/woolthread/woolthread.xml</path>
+    <offsets>
+      <x-m> -4.410 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> -0.407 </z-m>
+    </offsets>
+    <pitch-deg> 90 </pitch-deg>
+  </model>
+  
 
   <!-- Pilote -->
   <model>
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -3.636 </x-m>
+      <x-m> -3.640 </x-m>
       <y-m> -0.252 </y-m>
       <z-m> -0.711 </z-m>
     </offsets>
