@@ -1,0 +1,116 @@
+AC3Db
+MATERIAL "Material.001" rgb 1.000 1.000 1.000  amb 0.500 0.500 0.500  emis 0.150 0.150 0.150  spec 1.000 1.000 1.000  shi 72 trans 0.000
+MATERIAL "Material.002" rgb 1.000 1.000 1.000  amb 0.500 0.500 0.500  emis 0.150 0.150 0.150  spec 1.000 1.000 1.000  shi 72 trans 0.000
+OBJECT world
+name "Blender_exporter_v2.18__c172fuel.ac"
+kids 3
+OBJECT poly
+name "Face"
+data 8
+Mesh.005
+crease 30.0
+texture "fuel-oil.png"
+texrep 1 1
+numvert 6
+0 -0.01334 0.0329
+0 0.01274 0.0329
+0 0.01274 -0.03534
+0 -0.01334 -0.03534
+0 -0.01334 -0.00009
+0 0.01274 0.00003
+numsurf 2
+SURF 0X0
+mat 0
+refs 4
+0 0.003906 0.226563
+4 0.19354 0.226562
+5 0.192815 0.765625
+1 0.003906 0.765625
+SURF 0X0
+mat 0
+refs 4
+4 0.791513 0.226563
+3 0.994141 0.226563
+2 0.994141 0.765625
+5 0.790822 0.765625
+kids 0
+OBJECT poly
+name "LeftFuelNeedle"
+data 8
+Mesh.004
+crease 30.0
+numvert 7
+0.00124 0.00286 0.01556
+0.00124 -0.0182 0.01556
+0.00124 -0.0182 0.01689
+0.00124 0.00286 0.01689
+0.00124 -0.00767 0.01689
+0.00124 -0.00767 0.01556
+0.00124 -0.0182 0.01623
+numsurf 4
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+3 0 0
+4 0 0
+5 0 0
+SURF 0X0
+mat 1
+refs 3
+6 0 0
+5 0 0
+4 0 0
+SURF 0X0
+mat 1
+refs 3
+2 0 0
+6 0 0
+4 0 0
+SURF 0X0
+mat 1
+refs 3
+6 0 0
+1 0 0
+5 0 0
+kids 0
+OBJECT poly
+name "RightFuelNeedle"
+data 8
+Mesh.001
+crease 30.0
+numvert 7
+0.00124 0.00286 -0.01556
+0.00124 -0.0182 -0.01557
+0.00124 -0.0182 -0.01689
+0.00124 0.00286 -0.01689
+0.00124 -0.00767 -0.01689
+0.00124 -0.00767 -0.01556
+0.00124 -0.0182 -0.01623
+numsurf 4
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+5 0 0
+4 0 0
+3 0 0
+SURF 0X0
+mat 1
+refs 3
+4 0 0
+5 0 0
+6 0 0
+SURF 0X0
+mat 1
+refs 3
+4 0 0
+6 0 0
+2 0 0
+SURF 0X0
+mat 1
+refs 3
+5 0 0
+1 0 0
+6 0 0
+kids 0

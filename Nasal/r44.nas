@@ -27,6 +27,27 @@ setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_systems,2);
     setprop("sim/model/sound/volume", 0.5);
     setprop("/instrumentation/doors/Rcrew/position-norm",1);
+    
+    # COMM1 (according to its documentation)
+aircraft.data.add(
+    "instrumentation/comm[0]/power-btn",
+    "instrumentation/comm[0]/volume",
+    "instrumentation/comm[0]/frequencies/selected-mhz",
+    "instrumentation/comm[0]/frequencies/standby-mhz",
+    "instrumentation/comm[0]/frequencies/dial-khz",
+    "instrumentation/comm[0]/frequencies/dial-mhz",
+    "instrumentation/comm[0]/test-btn",
+    "instrumentation/nav[0]/audio-btn",
+    "instrumentation/nav[0]/power-btn",
+    "instrumentation/nav[0]/volume",
+    "instrumentation/nav[0]/frequencies/selected-mhz",
+    "instrumentation/nav[0]/frequencies/standby-mhz",
+    "instrumentation/nav[0]/frequencies/dial-khz",
+    "instrumentation/nav[0]/frequencies/dial-mhz",
+    "instrumentation/nav[0]/radials/selected-deg",
+);
+
+kma20.new(0)
 });
 
 setlistener("/sim/signals/reinit", func {

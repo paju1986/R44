@@ -15,7 +15,27 @@
       <cockpit type="int"> 4 </cockpit>
       <model   type="int"> 4 </model>
     </rating>
+    
+    
+    
 
   </sim>
+  
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <name type="string">Main Tank</name>
+        <capacity-gal_us type="double">31.6</capacity-gal_us>
+        <unusable-gal_us type="double">30.6</unusable-gal_us>
+        <level-gal_us type="double">50</level-gal_us>
+      </tank>
+      <tank n="1">
+        <name type="string">Auxiliary tank</name>
+        <capacity-gal_us type="double">18.5</capacity-gal_us>
+        <unusable-gal_us type="double">18.3</unusable-gal_us>
+        <level-gal_us type="double">50</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
 
 </PropertyList>

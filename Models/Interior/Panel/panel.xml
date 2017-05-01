@@ -28,6 +28,67 @@
       <blue>  2 </blue>
     </emission>
   </animation>
+  
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/AmpsOilPress/c172fuel2.xml</path>
+    <offsets>
+      <x-m> -0.077 </x-m>
+      <y-m> 0.025 </y-m>    
+      <z-m>  0.017 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel2.xml</path>
+    <offsets>
+      <x-m> -0.038 </x-m>
+      <y-m> 0.025 </y-m>    
+      <z-m>  -0.001 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+  
+   <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel.xml</path>
+    <offsets>
+      <x-m> 0.001 </x-m>
+      <y-m> 0.024 </y-m>    
+      <z-m>  -0.020 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+  
+ <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kma20/kma20.xml</path>
+    <offsets>
+      <x-m> 0.102 </x-m>
+      <y-m> -0.005 </y-m>    
+      <z-m>  -0.089 </z-m>
+      <pitch-deg> -30 </pitch-deg>
+    </offsets>
+  </model>
+  
+  
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kt76a/kt76a.xml</path>
+    <offsets>
+      <x-m> 0.158 </x-m>
+      <y-m> -0.005 </y-m>    
+      <z-m>  -0.206 </z-m>
+      <pitch-deg> -30 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
+    <offsets>
+      <x-m> 0.129 </x-m>
+      <y-m> -0.005 </y-m>
+      <z-m>  -0.144 </z-m>
+      <pitch-deg> -30 </pitch-deg>
+    </offsets>
+  </model>
 
   <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
@@ -36,6 +97,16 @@
       <y-m> -0.078 </y-m>
       <z-m>  0.082 </z-m>
       <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+  
+   <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> -0.066 </x-m>
+      <y-m> -0.050 </y-m>    
+      <z-m>  0.025 </z-m>
+      <pitch-deg> -65 </pitch-deg>
     </offsets>
   </model>
 

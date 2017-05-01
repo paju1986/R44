@@ -229,6 +229,8 @@ var electrical_bus = func(){
     } else {
         OutPuts.getNode("fuel-pump",1).setValue(0.0);
     }
+    
+  
 
     if (props.globals.getNode("/controls/engines/engine[0]/starter").getBoolValue()){
         starter_volts = bus_volts;
@@ -256,6 +258,17 @@ var avionics_bus = func() {
 #    OutPuts.getNode("nav[1]",1).setValue(bus_volts);
 #    OutPuts.getNode("comm[0]",1).setValue(bus_volts);
 #    OutPuts.getNode("comm[1]",1).setValue(bus_volts);
+
+  setprop("/systems/electrical/outputs/nav[1]", bus_volts);
+  setprop("/systems/electrical/outputs/comm[1]", bus_volts);
+ 
+  if(bus_volts > 0) {  #if there is power then turn on the radios
+     setprop("/sim/model/c172p/lighting/comm1-power", 1);
+  } else {
+     setprop("/sim/model/c172p/lighting/comm1-power", 0);
+  }
+ 
+
 
     return load;
 }
