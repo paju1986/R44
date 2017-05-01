@@ -31,6 +31,19 @@
           </script>
         </binding>
       </item>
+        <item>
+        <label>Pilot/copilot visible</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "/sim/model/r44/pilot-visible";
+            setprop(p, var i = !getprop(p));
+             var a = "/sim/model/r44/copilot-visible";
+            setprop(a, var i = !getprop(a));
+            gui.popupTip("pilots visible " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
       <item>
         <label>Immatriculation</label>
         <binding>

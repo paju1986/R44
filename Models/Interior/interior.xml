@@ -73,6 +73,7 @@
 
   <!-- Pilote -->
   <model>
+      <name>pilot</name>
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -3.640 </x-m>
@@ -80,9 +81,17 @@
       <z-m> -0.711 </z-m>
     </offsets>
   </model>
+   <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+        <condition>
+            <property>/sim/model/r44/pilot-visible</property>
+        </condition>
+    </animation>    
 
   <!-- Copilote -->
   <model>
+    <name>copilot</name>
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -3.636 </x-m>
@@ -90,6 +99,13 @@
       <z-m> -0.711 </z-m>
     </offsets>
   </model>
+   <animation>
+        <type>select</type>
+        <object-name>copilot</object-name>
+        <condition>
+            <property>/sim/model/r44/copilot-visible</property>
+        </condition>
+    </animation>    
 
   <!-- Planche de bord -->
   <model>
