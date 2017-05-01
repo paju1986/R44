@@ -29,6 +29,16 @@
     </emission>
   </animation>
   
+   <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/ManifoldPressure/asi.xml</path>
+    <offsets>
+     <x-m> -0.123 </x-m>
+      <y-m>  0.078 </y-m>
+      <z-m>  0.082 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+  
   <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/AmpsOilPress/c172fuel2.xml</path>
     <offsets>
@@ -115,16 +125,6 @@
     <offsets>
       <x-m> -0.123 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m>  0.082 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/plug/plug.xml</path>
-    <offsets>
-      <x-m> -0.123 </x-m>
-      <y-m>  0.078 </y-m>
       <z-m>  0.082 </z-m>
       <pitch-deg> -5 </pitch-deg>
     </offsets>
