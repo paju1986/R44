@@ -37,5 +37,11 @@
       </tank>
     </fuel>
   </consumables>
+  
+  <nasal>
+       <garmin196>
+            <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
+        </garmin196>
+  </nasal>
 
 </PropertyList>
