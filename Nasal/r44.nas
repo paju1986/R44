@@ -48,6 +48,7 @@ aircraft.data.add(
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
 
+
 # mhab merged from woolthread.nas
 # Simple vibrating yawstring
 
@@ -114,12 +115,11 @@ setlistener("controls/engines/engine[0]/clutch", func(clutch){
 setlistener("/controls/engines/engine[0]/throttle", func(){ #implement manifold pressure gauge based on engine throttle
    
    if(getprop("/engines/engine/running") == 1) {
-        var throttle = getprop("/controls/engines/engine[0]/throttle");
+      var throttle = getprop("/controls/engines/engine[0]/throttle");
         setprop("/r44/engines/engine[0]/mp-pressure",throttle);
    } else {
      setprop("/r44/engines/engine[0]/mp-pressure",1);
    }
-    
     
 },0,0);
 

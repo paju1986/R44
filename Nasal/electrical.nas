@@ -263,7 +263,7 @@ var avionics_bus = func() {
   setprop("/systems/electrical/outputs/comm[1]", bus_volts);
  
   if(bus_volts > 0) {  #if there is power then turn on the radios
-     setprop("/sim/model/c172p/lighting/comm1-power", 1);
+     setprop("/sim/model/c172p/lighting/comm1-power",  DIMMER.getValue());
   } else {
      setprop("/sim/model/c172p/lighting/comm1-power", 0);
   }
