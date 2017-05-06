@@ -112,16 +112,6 @@ setlistener("controls/engines/engine[0]/clutch", func(clutch){
     }
 },0,0);
 
-setlistener("/controls/engines/engine[0]/throttle", func(){ #implement manifold pressure gauge based on engine throttle
-   
-   if(getprop("/engines/engine/running") == 1) {
-      var throttle = getprop("/controls/engines/engine[0]/throttle");
-        setprop("/r44/engines/engine[0]/mp-pressure",throttle);
-   } else {
-     setprop("/r44/engines/engine[0]/mp-pressure",1);
-   }
-    
-},0,0);
 
 
 
@@ -211,6 +201,7 @@ var update_systems = func {
 	if(!RPM_arm.getBoolValue()){
 	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 	}
+	
 
 	if(getprop("/systems/electrical/outputs/starter") > 11){
 	    if(getprop("/controls/electric/key") > 2){
@@ -237,6 +228,14 @@ var update_systems = func {
 	    }
 
 	if(getprop("/engines/engine/running")){
+	
+	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
+
+    interpolate("/r44/engines/engine[0]/mp-pressure", engineTrottle, 0.9);
+	
+	
+	
+	print(getprop("/r44/engines/engine[0]/mp-pressure"));
 	  if(getprop("/engines/engine/amp-v") > 0){
 	    if(getprop("/engines/engine/clutch-engaged")){
 		interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
@@ -256,6 +255,7 @@ var update_systems = func {
 	  interpolate("/engines/engine/rpm", 0, 0.8);
 	  interpolate("/rotors/main/rpm", 0, 0.4);
 	  interpolate("/rotors/tail/rpm", 0, 0.4);
+      setprop("/r44/engines/engine[0]/mp-pressure",1);
 	}
 	settimer(update_systems,0);
 }
