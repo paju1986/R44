@@ -28,6 +28,18 @@
       <blue>  2 </blue>
     </emission>
   </animation>
+  
+    <model>
+        <name>fe</name>
+        <path>>Aircraft/R44/Models/Interior/Panel/FE-ELT/fe.xml</path>
+         <offsets>
+      <x-m> -0.123 </x-m>
+      <y-m>  0.078 </y-m>
+      <z-m>  0.082 </z-m>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+    </model>   
+  
 
      <!-- non-Canvas remote Garmin 196 GPS (FGDATA) -->
     <!-- TODO Remove this old version, unhide and implement the Canvas version below -->
