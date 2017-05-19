@@ -42,8 +42,8 @@ var fcs_params = {
   },
   'switches' : { # initial status of FCS
     'auto-hover' : 0, 
-    'cas' : 1, 
-    'sas' : 1, 
+    'cas' : 0, 
+    'sas' : 0, 
     'auto-stabilator' : 1, 
     'sideslip-adjuster' : 1, 
     'tail-rotor-adjuster' : 1,
