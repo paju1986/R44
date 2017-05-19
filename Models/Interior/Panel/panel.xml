@@ -136,6 +136,16 @@
     </offsets>
   </model>
   
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/hours/clock.xml</path>
+    <offsets>
+      <x-m> -0.077 </x-m>
+      <y-m> -0.053 </y-m>    
+      <z-m>  0.018 </z-m>
+      <pitch-deg> -65 </pitch-deg>
+    </offsets>
+  </model>
+  
    <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/clock/clock.xml</path>
     <offsets>
