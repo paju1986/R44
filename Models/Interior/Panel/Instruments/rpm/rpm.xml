@@ -65,8 +65,8 @@
     <property>rotors/main/rpm</property>
     <interpolation>
       <entry><ind>   0 </ind><dep>  0 </dep></entry>
-      <entry><ind> 204 </ind><dep> 11 </dep></entry>
-      <entry><ind> 408 </ind><dep> 88 </dep></entry>
+      <entry><ind> 265 </ind><dep> 11 </dep></entry>
+      <entry><ind> 615 </ind><dep> 88 </dep></entry>
     </interpolation>
     <center>
       <x-m> 0.000 </x-m>
