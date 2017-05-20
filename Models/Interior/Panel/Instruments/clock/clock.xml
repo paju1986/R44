@@ -27,9 +27,9 @@
        <object-name>SC.hand</object-name>
        
     <emission>
-      <red>   0.00 </red>
+      <red>   0.25 </red>
       <green> 0.25 </green>
-      <blue>  0.05 </blue>
+      <blue>  0.25 </blue>
       <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
