@@ -73,7 +73,7 @@ var yawstring = func {
 # Start the yawstring ASAP
 yawstring();
 
-kma20.new(0)
+
 });
 
 setlistener("/sim/signals/reinit", func {
