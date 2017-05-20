@@ -18,17 +18,6 @@
 
     <!-- Objets transparents -->
   </animation>
-
-  
-  <animation>
-    <type>material</type>
-    <object-name>alt.annun</object-name>
-    <emission>
-      <red>   2 </red>
-      <green> 2 </green>
-      <blue>  2 </blue>
-    </emission>
-  </animation>
   
     <model>
         <name>fe</name>
@@ -466,5 +455,7 @@
       <pitch-deg> -65 </pitch-deg>
     </offsets>
   </model>
+  
+  
 
 </PropertyList>

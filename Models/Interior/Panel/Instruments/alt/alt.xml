@@ -32,10 +32,10 @@
     <object-name>needle1</object-name>
     <object-name>needle2</object-name>
     <object-name>needle3</object-name>
-    <emission>
-      <red>   0.50 </red>
+     <emission>
+      <red>   0.00 </red>
       <green> 0.25 </green>
-      <blue>  0.25 </blue>
+      <blue>  0.05 </blue>
       <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>

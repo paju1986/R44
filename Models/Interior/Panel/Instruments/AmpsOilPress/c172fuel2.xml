@@ -16,12 +16,12 @@
         <object-name>Face</object-name>
         <object-name>LeftFuelNeedle</object-name>
         <object-name>RightFuelNeedle</object-name>
-        <emission>
-            <red>1.0</red>
-            <green>0.2</green>
-            <blue>0.0</blue>
-            <factor-prop>sim/model//material/instruments/factor</factor-prop>
-        </emission>
+         <emission>
+      <red>   0.00 </red>
+      <green> 0.25 </green>
+      <blue>  0.05 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
     </animation>
 
     <animation>

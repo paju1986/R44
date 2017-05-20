@@ -4,6 +4,17 @@
 
 <path>clock.ac</path>
 
-    
+     <animation>
+    <type>material</type>
+    <object-name>CLOCK.face</object-name>
+
+       
+    <emission>
+      <red>   0.00 </red>
+      <green> 0.25 </green>
+      <blue>  0.05 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
 
 </PropertyList>

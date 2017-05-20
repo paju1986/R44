@@ -81,6 +81,7 @@ setlistener("/sim/signals/reinit", func {
     setprop("/controls/engines/engine/throttle",1);
 });
 
+
 setlistener("/sim/current-view/view-number", func(vw) {
     var nm = vw.getValue();
     setprop("sim/model/sound/volume", 1.0);

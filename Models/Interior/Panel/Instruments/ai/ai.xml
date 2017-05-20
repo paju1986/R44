@@ -34,10 +34,10 @@
     <object-name>scale</object-name>
     <object-name>float</object-name>
     <object-name>aircraft</object-name>
-    <emission>
-      <red>   0.50 </red>
+     <emission>
+      <red>   0.00 </red>
       <green> 0.25 </green>
-      <blue>  0.25 </blue>
+      <blue>  0.05 </blue>
       <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
