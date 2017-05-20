@@ -270,7 +270,7 @@
             <button>0</button>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/landing-lights</property>
+                <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
             </binding>
             <binding>
                 <command>property-toggle</command>
