@@ -20,6 +20,30 @@
     <!-- Objets transparents -->
   </animation>
   
+   <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+  
+   <animation>
+    <type>noshadow</type>
+    <object-name>vitre.001</object-name>
+  </animation>
+  
+   <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+  
+    <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre.001</object-name>
+  </animation>
+  
     <model>
         <name>fe</name>
         <path>>Aircraft/R44/Models/Interior/Panel/FE-ELT/fe.xml</path>
@@ -45,6 +69,7 @@
         </offsets>
          
     </model>   
+    
     
     <animation>
         <type>select</type>
@@ -258,7 +283,7 @@
   <animation>
         <type>rotate</type>
         <object-name>Llight.switch</object-name>
-        <property>controls/lighting/landing-lights</property>
+        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
         <factor>30</factor>
         <center>
             <x-m>0.270</x-m>
