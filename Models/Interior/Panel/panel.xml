@@ -43,7 +43,16 @@
       <z-m>  0.300 </z-m>
       <pitch-deg> -5 </pitch-deg>
         </offsets>
+         
     </model>   
+    
+    <animation>
+        <type>select</type>
+        <object-name>Garmin196-GPS-non-Canvas</object-name>
+        <condition>
+            <property>/sim/model/r44/gps-visible</property>
+        </condition>
+    </animation>  
   
    <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/ManifoldPressure/asi.xml</path>
