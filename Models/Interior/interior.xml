@@ -117,6 +117,7 @@
     </offsets>
   </model>
 
+
   <!-- Ouverture/fermeture des portes -->
   <animation>
     <name>IntPorteAvantGauche</name>

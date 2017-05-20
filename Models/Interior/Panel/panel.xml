@@ -15,6 +15,7 @@
     <object-name>LHpedal</object-name>
     <object-name>RHpedal</object-name>
     <object-name>alt.annun</object-name>
+     <object-name>Llight.switch</object-name>
 
     <!-- Objets transparents -->
   </animation>
@@ -209,6 +210,8 @@
     <type>rotate</type>
     <object-name>Yokeshaft</object-name>
     <object-name>Yoke</object-name>
+    <object-name>Llight.switch</object-name>
+    <object-name>nut.001</object-name>
     <property>controls/flight/elevator</property>
     <factor> 15 </factor>
     <center>
@@ -226,6 +229,8 @@
   <animation>
     <type>rotate</type>
     <object-name>Yoke</object-name>
+    <object-name>Llight.switch</object-name>
+    <object-name>nut.001</object-name>
     <object-name>Yokeshaft</object-name>
     <property>controls/flight/aileron</property>
     <factor> 15 </factor>
@@ -240,6 +245,48 @@
       <z>  0 </z>
     </axis>
   </animation>
+  
+  <animation>
+        <type>rotate</type>
+        <object-name>Llight.switch</object-name>
+        <property>controls/lighting/landing-lights</property>
+        <factor>30</factor>
+        <center>
+            <x-m>0.270</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>0.031</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+     <animation>
+        <type>pick</type>
+        <object-name>Llight.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+  
+     <animation>
+  <type>select</type>
+  <object-name>Light</object-name>
+  <condition>
+   <property>controls/lighting/landing-light</property>
+  </condition>
+ </animation>
+  
 
   <animation>
     <type>rotate</type>
