@@ -17,7 +17,7 @@
         <object-name>LeftFuelNeedle</object-name>
         <object-name>RightFuelNeedle</object-name>
         <emission>
-      <red>   0.10 </red>
+      <red>   0.20 </red>
       <green> 0.20 </green>
       <blue>  0.05 </blue>
       <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
