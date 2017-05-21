@@ -16,6 +16,8 @@
     <object-name>RHpedal</object-name>
     <object-name>alt.annun</object-name>
      <object-name>Llight.switch</object-name>
+      <object-name>vitre</object-name>
+      <object-name>vitre.001</object-name>
 
     <!-- Objets transparents -->
   </animation>
@@ -30,19 +32,7 @@
     <object-name>vitre.001</object-name>
   </animation>
   
-   <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-  
-    <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre.001</object-name>
-  </animation>
+
   
     <model>
         <name>fe</name>
@@ -537,6 +527,18 @@
     </offsets>
   </model>
   
+     <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
   
+    <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre.001</object-name>
+  </animation>
 
 </PropertyList>

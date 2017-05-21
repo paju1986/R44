@@ -84,6 +84,17 @@ setlistener("/sim/signals/reinit", func {
 });
 
 
+setlistener("/controls/lighting/instruments-norm", func {
+    var light = getprop("/controls/lighting/instruments-norm");
+
+    setprop("controls/lighting/radio-norm",light);
+});
+
+
+
+
+
+
 setlistener("/sim/current-view/view-number", func(vw) {
     var nm = vw.getValue();
     setprop("sim/model/sound/volume", 1.0);
