@@ -69,7 +69,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RightFuelNeedle</object-name>
-          <property>engines/active-engine/oil-pressure-psi</property>
+          <property>oilpressure</property>
         <interpolation>
             <entry>
                 <ind>0</ind>

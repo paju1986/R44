@@ -243,6 +243,10 @@ var update_systems = func {
 
 	if(getprop("/engines/engine/running")){
 	
+	#when engine on moves fuel pressure and temperature gaguges NOTE: not realistic!! fix later
+	interpolate("oilpressure",24,0.6);
+	interpolate("oiltemp",24,20);
+	
 	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
 
     interpolate("/r44/engines/engine[0]/mp-pressure", engineTrottle, 0.9);
@@ -266,6 +270,9 @@ var update_systems = func {
 	    }
 	  }
 	}else{
+	interpolate("oilpressure",0,0.6);
+	interpolate("oiltemp",0,20);
+	
 	  interpolate("/engines/engine/rpm", 0, 0.8);
 	  interpolate("/rotors/main/rpm", 0, 0.4);
 	  interpolate("/rotors/tail/rpm", 0, 0.4);
