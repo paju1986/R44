@@ -21,7 +21,7 @@
          fx="0.99" fy="0" fz="-0.043" 
          ccw="1"
          phi0="45"
-         maxcollective="13"
+         maxcollective="17"
          mincollective="0.3"
          mincyclicele="-9.5"
          maxcyclicele="9.5"
@@ -109,7 +109,7 @@
          <control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
   </rotor>
 
-  <rotorgear max-power-engine="300"
+  <rotorgear max-power-engine="380"
              max-power-rotor-brake="50"
              rotorgear-friction="0.5"
              engine-prop-factor="0.005"
