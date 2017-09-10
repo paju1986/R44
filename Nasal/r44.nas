@@ -248,27 +248,27 @@ var update_systems = func {
 	interpolate("oiltemp",24,20);
 	
 	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
+    
+     interpolate("/r44/engines/engine[0]/mp-pressure", (engineTrottle*0.44) + 0.45, 0.9);
+    
+    
+	
 
-    interpolate("/r44/engines/engine[0]/mp-pressure", engineTrottle, 0.9);
-	
-	
-	
-	print(getprop("/r44/engines/engine[0]/mp-pressure"));
-	  if(getprop("/engines/engine/amp-v") > 0){
-	    if(getprop("/engines/engine/clutch-engaged")){
-		interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
-		interpolate("/rotors/tail/rpm", 2700 * throttle, 0.9);
-	    }else{
-		interpolate("/rotors/main/rpm", 0, 0.2);
-		interpolate("/rotors/tail/rpm", 0, 0.2);
-	    }
-	    interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
-	  } else {
-	    if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
-		setprop("/engines/engine/clutch-engaged",0);
-		setprop("/engines/engine/running",0);
-	    }
-	  }
+        if(getprop("/engines/engine/amp-v") > 0){
+            if(getprop("/engines/engine/clutch-engaged")){
+            interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
+            interpolate("/rotors/tail/rpm", 2700 * throttle, 0.9);
+            }else{
+            interpolate("/rotors/main/rpm", 0, 0.2);
+            interpolate("/rotors/tail/rpm", 0, 0.2);
+            }
+            interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
+        } else {
+            if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
+            setprop("/engines/engine/clutch-engaged",0);
+            setprop("/engines/engine/running",0);
+            }
+        }
 	}else{
 	interpolate("oilpressure",0,0.6);
 	interpolate("oiltemp",0,20);
