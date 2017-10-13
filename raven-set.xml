@@ -16,6 +16,28 @@
       <model   type="int"> 4 </model>
     </rating>
     
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/raven-splash.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/raven-splash1.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/raven-splash2.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/raven-splash3.png</path>
+      </preview>
+    </previews>
     
     
 

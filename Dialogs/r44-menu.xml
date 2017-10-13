@@ -31,27 +31,27 @@
           </script>
         </binding>
       </item>
-        <item>
+      <item>
         <label>Pilot/copilot visible</label>
         <binding>
           <command>nasal</command>
           <script>
             var p = "/sim/model/r44/pilot-visible";
             setprop(p, var i = !getprop(p));
-             var a = "/sim/model/r44/copilot-visible";
+            var a = "/sim/model/r44/copilot-visible";
             setprop(a, var i = !getprop(a));
             gui.popupTip("pilots visible " ~ (i ? "On" : "Off"));
           </script>
         </binding>
       </item>
-       <item>
+      <item>
         <label>Hide/Show Garming196 Gps</label>
         <binding>
           <command>nasal</command>
           <script>
             var p = "/sim/model/r44/gps-visible";
             setprop(p, var i = !getprop(p));
-             
+
             gui.popupTip("gps visible " ~ (i ? "On" : "Off"));
           </script>
         </binding>
@@ -68,12 +68,20 @@
         <binding>
           <command>nasal</command>
           <script>
-	    dual_control_tools.copilot_dialog.show(aircraft_dual_control.copilot_type);
-	  </script>
-        </binding>
-      </item>
-    </menu>
-  </default>
+           dual_control_tools.copilot_dialog.show(aircraft_dual_control.copilot_type);
+         </script>
+       </binding>
+     </item>
+     <item>
+       <label>Pushback</label>
+       <name>pushback</name>
+       <binding>
+        <command>nasal</command>
+        <script>var push_dlg = gui.Dialog.new("sim/gui/dialogs/pushback/dialog", "Aircraft/R44/Models/HelicopterPushback/dialog/helicopter_pushback.xml"); push_dlg.open();</script>
+      </binding>
+    </item>
+  </menu>
+</default>
 
 </PropertyList>
 

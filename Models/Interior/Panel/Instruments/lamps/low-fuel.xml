@@ -13,16 +13,10 @@
     <type>select</type>
     <object-name>lampon</object-name>
     <condition>
-      <and>
         <less-than>
            <property>/consumables/fuel/total-fuel-lbs</property>
            <value>6</value>
         </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/instrument-lights</property>
-          <value>0.0001</value>
-        </greater-than>
-      </and>
     </condition>
   </animation>
 
@@ -43,7 +37,6 @@
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 

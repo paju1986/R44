@@ -3,30 +3,6 @@
 <PropertyList>
 
   <path>r44.ac</path>
-
-  <nasal>
-    <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/R44/Models/Liveries", 10);
-
-      var self = cmdarg();
-
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-
-      crew_door.alias(float_0);
-      passenger_door.alias(float_1);
-    </load>
-
-    <unload>
-      livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
-    </unload>
-  </nasal>
-
   <animation>
     <!-- Opaque -->
     <object-name>fuselage</object-name>
@@ -237,6 +213,13 @@
     </offsets>
   </model>
 
+  <!-- TV Camera -->
+
+  <model>
+    <name>TVCam</name>
+    <path>Aircraft/R44/Models/TVCam.xml</path>
+  </model>
+
   <!-- Ouverture/fermeture des portes -->
   <animation>
     <name>PorteAvantGauche</name>
@@ -440,6 +423,10 @@
       </equals>
     </condition>
   </animation>
+
+  <model>
+    <path>Aircraft/R44/Models/HelicopterPushback/HelicopterPushback.xml</path>
+  </model>
 
 </PropertyList>
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+	<path>TVcam.ac</path>
+
+	<animation>
+		<type>material</type>
+
+		<object-name>fuselage</object-name>
+		<object-name>fuselage1</object-name>
+		<object-name>fuselage2</object-name>
+		<object-name>fuselage3</object-name>
+		<object-name>fuselage4</object-name>
+		<object-name>fuselage5</object-name>
+		<object-name>fuselage6</object-name>
+		<object-name>fuselage7</object-name>
+		<object-name>fuselage8</object-name>
+		<object-name>fuselage9</object-name>
+		<object-name>light</object-name>
+		<object-name>light2</object-name>
+		<object-name>light3</object-name>
+		<object-name>light4</object-name>
+		<object-name>cylinder</object-name>
+		<object-name>verrelampe</object-name>
+
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>texture.png</texture>
+
+	</animation>
+
+	<animation>
+		<object-name>fuselage2</object-name>
+		<object-name>fuselage3</object-name>
+		<object-name>fuselage6</object-name>
+		<object-name>disk2</object-name>
+		<object-name>disk2</object-name>
+		<object-name>fuselage1</object-name>
+		<object-name>fuselage4</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/model/r44/tv</property>
+		</condition>
+	</animation>
+
+
+</PropertyList>
+

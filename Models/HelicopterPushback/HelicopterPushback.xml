@@ -1,0 +1,36 @@
+<PropertyList>
+
+  <!-- Trailer position -->
+  <model>
+    <path>/models/trailer/trailer.xml</path>
+    <name>trailer</name>
+    <offsets>
+      <x-m>-1.9958</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.46343</z-m>
+    </offsets>
+  </model>
+  <!-- Pushback Guys position -->
+  <model>
+    <path>/models/pushback_guys/pushback_guys.xml</path>
+    <offsets>
+      <x-m>-2.35681</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.5343</z-m>
+    </offsets>
+  </model>
+  <!-- Trailer Scale to fit skid size -->
+  <animation>
+    <type>scale</type>
+    <object-name>trailer</object-name>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <x-offset>1</x-offset>
+    <y-offset>1.3</y-offset>
+    <z-offset>1</z-offset>
+  </animation>
+
+</PropertyList>

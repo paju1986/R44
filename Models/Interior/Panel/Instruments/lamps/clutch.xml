@@ -13,13 +13,10 @@
     <type>select</type>
     <object-name>lampon</object-name>
     <condition>
-      <and>
+    <equals>
         <property>/controls/engines/engine/clutch</property>
-        <greater-than>
-          <property>/systems/electrical/outputs/instrument-lights</property>
-          <value>0.0001</value>
-        </greater-than>
-      </and>
+        <value>1</value>
+    </equals>
     </condition>
   </animation>
 
@@ -40,7 +37,6 @@
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 

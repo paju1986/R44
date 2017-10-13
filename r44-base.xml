@@ -88,98 +88,105 @@
     <multiplay>
      <generic>
        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow and smoke -->
-	     <float n="5" alias="/controls/flight/rudder"/>
-	     <float n="6" alias="/controls/flight/elevator"/>
-	     <float n="7" alias="/controls/flight/aileron"/>
-	     <float n="8" alias="/controls/engines/engine/throttle"/>
+       <float n="5" alias="/controls/flight/rudder"/>
+       <float n="6" alias="/controls/flight/elevator"/>
+       <float n="7" alias="/controls/flight/aileron"/>
+       <float n="8" alias="/controls/engines/engine/throttle"/>
      </generic>
-    </multiplay>
-    <!-- ######## DUAL CONTROL ######### -->
-    <!-- ############################### -->
+   </multiplay>
+   <!-- ######## DUAL CONTROL ######### -->
+   <!-- ############################### -->
 
-  </sim>
+   <aircraft-data>
+     <path>/sim/model/r44/FOYoke-visible</path>
+     <path>/sim/model/r44/pilot-visible</path>
+     <path>/sim/model/r44/copilot-visible</path>
+     <path>/rotors/main/bladesvisible</path>
+   </aircraft-data>
 
-  <controls>
-    <engines>
-      <engine n="0">
-        <magnetos>0</magnetos>
-        <throttle>1.0</throttle>
-        <clutch type="bool">0</clutch>
-        <clutchguard type="bool">0</clutchguard>
-      </engine>
-    </engines>
-    <gear>
-      <brake-parking>1</brake-parking>
-    </gear>
-    <rotor>
-      <engine-throttle type="double">1.0</engine-throttle>
-      <brake>0</brake>
-      <reltarget>1</reltarget>
-      <maxreltorque>1</maxreltorque>
-    </rotor>
-    <flight>
-      <aileron-trim>0</aileron-trim>
-      <elevator-trim>0</elevator-trim>
-    </flight>
-  </controls>
+ </sim>
 
+ <controls>
   <engines>
-    <engine>
-      <rpm type="double">0</rpm>
-      <running type="bool">false</running>
-      <clutch-engaged type="bool">false</clutch-engaged>
+    <engine n="0">
+      <magnetos>0</magnetos>
+      <throttle>1.0</throttle>
+      <clutch type="bool">0</clutch>
+      <clutchguard type="bool">0</clutchguard>
     </engine>
   </engines>
+  <gear>
+    <brake-parking>1</brake-parking>
+  </gear>
+  <rotor>
+    <engine-throttle type="double">1.0</engine-throttle>
+    <brake>0</brake>
+    <reltarget>1</reltarget>
+    <maxreltorque>1</maxreltorque>
+  </rotor>
+  <flight>
+    <aileron-trim>0</aileron-trim>
+    <elevator-trim>0</elevator-trim>
+  </flight>
+</controls>
 
-  <rotors>
-    <main>
-      <rpm type="double">0</rpm>
-      <cone-deg type="double">0</cone-deg>
-      <cone1-deg type="double">0</cone1-deg>
-      <cone2-deg type="double">0</cone2-deg>
-      <cone3-deg type="double">0</cone3-deg>
-      <cone4-deg type="double">0</cone4-deg>
-    </main>
-  </rotors>
+<engines>
+  <engine>
+    <rpm type="double">0</rpm>
+    <running type="bool">false</running>
+    <clutch-engaged type="bool">false</clutch-engaged>
+  </engine>
+</engines>
 
-  <instrumentation>
-    <gsdi>
-      <serviceable type="bool">true</serviceable>
-      <enabled type="bool">true</enabled>
-    </gsdi>
-  </instrumentation>
+<rotors>
+  <main>
+    <rpm type="double">0</rpm>
+    <cone-deg type="double">0</cone-deg>
+    <cone1-deg type="double">0</cone1-deg>
+    <cone2-deg type="double">0</cone2-deg>
+    <cone3-deg type="double">0</cone3-deg>
+    <cone4-deg type="double">0</cone4-deg>
+  </main>
+</rotors>
 
-  <input>
-    <keyboard include="Nasal/r44-keyboard.xml"/>
-  </input>
+<instrumentation>
+  <gsdi>
+    <serviceable type="bool">true</serviceable>
+    <enabled type="bool">true</enabled>
+  </gsdi>
+</instrumentation>
 
-  <rotors>
-    <main>
-      <rpm type="double">0</rpm>
-      <cone-deg type="double">0</cone-deg>
-      <cone1-deg type="double">0</cone1-deg>
-      <cone2-deg type="double">0</cone2-deg>
-      <cone3-deg type="double">0</cone3-deg>
-      <cone4-deg type="double">0</cone4-deg>
-    </main>
-  </rotors>
+<input>
+  <keyboard include="Nasal/r44-keyboard.xml"/>
+</input>
 
-  <nasal>
-    <doors>
-      <file>Aircraft/R44/Nasal/doors.nas</file>
-    </doors>
-    <r44>
-      <file>Aircraft/R44/Nasal/immat.nas</file>
-      <file>Aircraft/R44/Nasal/light.nas</file>
-      <file>Aircraft/R44/Nasal/r44.nas</file>
-      <file>Aircraft/R44/Nasal/rotoranimation.nas</file>
-      <file>Aircraft/R44/Nasal/electrical.nas</file>
-      <file>Aircraft/R44/Nasal/liveries.nas</file>
-      <file>Aircraft/R44/Nasal/bladevisible.nas</file>
-      <file>Aircraft/R44/Nasal/fcs-management.nas</file>
-      <file>Aircraft/Generic/helicopter-fcs.nas</file>*
-    </r44>
-  </nasal>
+<rotors>
+  <main>
+    <rpm type="double">0</rpm>
+    <cone-deg type="double">0</cone-deg>
+    <cone1-deg type="double">0</cone1-deg>
+    <cone2-deg type="double">0</cone2-deg>
+    <cone3-deg type="double">0</cone3-deg>
+    <cone4-deg type="double">0</cone4-deg>
+  </main>
+</rotors>
+
+<nasal>
+  <doors>
+    <file>Aircraft/R44/Nasal/doors.nas</file>
+  </doors>
+  <r44>
+    <file>Aircraft/R44/Nasal/immat.nas</file>
+    <file>Aircraft/R44/Nasal/light.nas</file>
+    <file>Aircraft/R44/Nasal/r44.nas</file>
+    <file>Aircraft/R44/Nasal/rotoranimation.nas</file>
+    <file>Aircraft/R44/Nasal/electrical.nas</file>
+    <file>Aircraft/R44/Nasal/liveries.nas</file>
+    <file>Aircraft/R44/Nasal/bladevisible.nas</file>
+    <file>Aircraft/R44/Nasal/fcs-management.nas</file>
+    <file>Aircraft/Generic/helicopter-fcs.nas</file>*
+  </r44>
+</nasal>
 
 </PropertyList>
 

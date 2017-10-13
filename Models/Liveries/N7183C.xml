@@ -2,10 +2,10 @@
 
 <PropertyList>
   <sim>
-      <model>      
-        <livery>
-          <name type="string">N7183C</name>
-          <texture>Liveries/N7183C.png</texture>
+    <model>      
+      <livery>
+        <name type="string">N7183C</name>
+        <texture>Liveries/N7183C.png</texture>
 <!--
           <diffuse>
             <red>   0.5 </red>
@@ -18,29 +18,29 @@
             <green> 0.5 </green>
             <blue>  0.5 </blue>
           </ambient>
--->
-          <specular>
-            <red>   0.3 </red>
-            <green> 0.3 </green>
-            <blue>  0.3 </blue>
-          </specular>
+        -->
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
 
-          <emission>
-            <red>   0.2 </red>
-            <green> 0.2 </green>
-            <blue>  0.2 </blue>
-          </emission>
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
 <!--
           <transparency>
             <alpha> 0.0 </alpha>
           </transparency>
 
           <shininess>10</shininess>
--->
-        </livery>
-        <livery-font>
-          <name type="string">N7183C</name>
-          <texture>Liveries/Disabled.png</texture>
+        -->
+      </livery>
+      <livery-font>
+        <name type="string">N7183C</name>
+        <texture>Liveries/Disabled.png</texture>
 <!--
           <diffuse>
             <red>   0.5 </red>
@@ -53,27 +53,30 @@
             <green> 0.5 </green>
             <blue>  0.5 </blue>
           </ambient>
--->
-          <specular>
-            <red>   0.3 </red>
-            <green> 0.3 </green>
-            <blue>  0.3 </blue>
-          </specular>
+        -->
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
 
-          <emission>
-            <red>   0.2 </red>
-            <green> 0.2 </green>
-            <blue>  0.2 </blue>
-          </emission>
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
 <!--
           <transparency>
             <alpha> 0.0 </alpha>
           </transparency>
 
           <shininess>10</shininess>
--->
-        </livery-font>
-      </model>
+        -->
+      </livery-font>
+      <r44>
+        <tv type="bool">false</tv>
+      </r44>
+    </model>
   </sim>
 
 </PropertyList>

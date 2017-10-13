@@ -1,0 +1,16 @@
+ <menubar>
+  <default>
+     
+   <menu n="10">
+    <item>
+     <label>Pushback</label>
+     <name>pushback</name>
+     <binding>
+      <command>nasal</command>
+      <script>var push_dlg = gui.Dialog.new("sim/gui/dialogs/pushback/dialog", "Aircraft/R44/Models/HelicopterPushback/dialog/helicopter_pushback.xml"); push_dlg.open();</script>
+     </binding>
+    </item>
+   </menu>
+ 
+  </default>
+ </menubar>

@@ -15,6 +15,24 @@
       <model   type="int"> 4 </model>
     </rating>
 
+    <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/clipper-splash.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/clipper-splash1.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splashs/clipper-splash2.png</path>
+      </preview>
+    </previews>
+
   </sim>
   
   <consumables>

@@ -3,542 +3,573 @@
 <!-- Based on R22 panel for tye moment -->
 <PropertyList>
 
-   <path>panel.ac</path>
+ <path>panel.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>panel</object-name>
-    <object-name>Yoke</object-name>
-    <object-name>Yokeshaft</object-name>
-    <object-name>Collective</object-name>
-    <object-name>Labels</object-name>
-    <object-name>LHpedal</object-name>
-    <object-name>RHpedal</object-name>
-    <object-name>alt.annun</object-name>
-     <object-name>Llight.switch</object-name>
-      <object-name>vitre</object-name>
-      <object-name>vitre.001</object-name>
+ <animation>
+  <!-- Objets opaques -->
+  <object-name>panel</object-name>
+  <object-name>Yoke</object-name>
+  <object-name>Yokeshaft</object-name>
+  <object-name>Collective</object-name>
+  <object-name>Labels</object-name>
+  <object-name>LHpedal</object-name>
+  <object-name>RHpedal</object-name>
+  <object-name>alt.annun</object-name>
+  <object-name>Llight.switch</object-name>
+  <object-name>vitre</object-name>
+  <object-name>vitre.001</object-name>
 
-    <!-- Objets transparents -->
-  </animation>
-  
-   <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
-  
-   <animation>
-    <type>noshadow</type>
-    <object-name>vitre.001</object-name>
-  </animation>
-  
+  <!-- Objets transparents -->
+</animation>
 
-  
-    <model>
-        <name>fe</name>
-        <path>>Aircraft/R44/Models/Interior/Panel/FE-ELT/fe.xml</path>
-         <offsets>
-      <x-m> -0.123 </x-m>
-      <y-m>  0.078 </y-m>
-      <z-m>  0.082 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-    </model>   
-  
+<animation>
+  <type>noshadow</type>
+  <object-name>vitre</object-name>
+</animation>
 
-     <!-- non-Canvas remote Garmin 196 GPS (FGDATA) -->
-    <!-- TODO Remove this old version, unhide and implement the Canvas version below -->
-    <model>
-        <name>Garmin196-GPS-non-Canvas</name>
-        <path>Aircraft/R44/instrument-3d/garmin196/garmin196.xml</path>
-        <offsets>
-             <x-m> -0.090 </x-m>
-      <y-m>  -0.004 </y-m>
-      <z-m>  0.300 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-        </offsets>
-         
-    </model>   
-    
-    
-    <animation>
-        <type>select</type>
-        <object-name>Garmin196-GPS-non-Canvas</object-name>
-        <condition>
-            <property>/sim/model/r44/gps-visible</property>
-        </condition>
-    </animation>  
-  
-   <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/ManifoldPressure/asi.xml</path>
-    <offsets>
-     <x-m> -0.123 </x-m>
-      <y-m>  0.078 </y-m>
-      <z-m>  0.082 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/AmpsOilPress/c172fuel2.xml</path>
-    <offsets>
-      <x-m> -0.077 </x-m>
-      <y-m> 0.025 </y-m>    
-      <z-m>  0.017 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel2.xml</path>
-    <offsets>
-      <x-m> -0.038 </x-m>
-      <y-m> 0.025 </y-m>    
-      <z-m>  -0.001 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
-  
-   <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel.xml</path>
-    <offsets>
-      <x-m> 0.001 </x-m>
-      <y-m> 0.024 </y-m>    
-      <z-m>  -0.020 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
-  
- <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kma20/kma20.xml</path>
-    <offsets>
-      <x-m> 0.102 </x-m>
-      <y-m> -0.005 </y-m>    
-      <z-m>  -0.089 </z-m>
-      <pitch-deg> -30 </pitch-deg>
-    </offsets>
-  </model>
-  
-  
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kt76a/kt76a.xml</path>
-    <offsets>
-      <x-m> 0.158 </x-m>
-      <y-m> -0.005 </y-m>    
-      <z-m>  -0.206 </z-m>
-      <pitch-deg> -30 </pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
-    <offsets>
-      <x-m> 0.129 </x-m>
-      <y-m> -0.005 </y-m>
-      <z-m>  -0.144 </z-m>
-      <pitch-deg> -30 </pitch-deg>
-    </offsets>
-  </model>
+<animation>
+  <type>noshadow</type>
+  <object-name>vitre.001</object-name>
+</animation>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
-    <offsets>
-      <x-m> -0.123 </x-m>
-      <y-m> -0.078 </y-m>
-      <z-m>  0.082 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/hours/clock.xml</path>
-    <offsets>
-      <x-m> -0.077 </x-m>
-      <y-m> -0.053 </y-m>    
-      <z-m>  0.018 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
-  
-   <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/clock/clock.xml</path>
-    <offsets>
-      <x-m> -0.022 </x-m>
-      <y-m> -0.053 </y-m>    
-      <z-m>  -0.008 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/vor/vor.xml</path>
-    <offsets>
-      <x-m> -0.123 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.082 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
-    <offsets>
-      <x-m> -0.130 </x-m>
-      <y-m> -0.116 </y-m>
-      <z-m>  0.164 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <name>fe</name>
+  <path>>Aircraft/R44/Models/Interior/Panel/FE-ELT/fe.xml</path>
+  <offsets>
+    <x-m> -0.123 </x-m>
+    <y-m>  0.078 </y-m>
+    <z-m>  0.082 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>   
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-    <offsets>
-      <x-m> -0.130 </x-m>
-      <y-m> -0.039 </y-m>
-      <z-m>  0.164 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/asi/asi.xml</path>
-    <offsets>
-      <x-m> -0.130 </x-m>
-      <y-m>  0.039 </y-m>
-      <z-m>  0.164 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<!-- non-Canvas remote Garmin 196 GPS (FGDATA) -->
+<!-- TODO Remove this old version, unhide and implement the Canvas version below -->
+<model>
+  <name>Garmin196-GPS-non-Canvas</name>
+  <path>Aircraft/R44/instrument-3d/garmin196/garmin196.xml</path>
+  <offsets>
+   <x-m> -0.090 </x-m>
+   <y-m>  -0.004 </y-m>
+   <z-m>  0.300 </z-m>
+   <pitch-deg> -5 </pitch-deg>
+ </offsets>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
-    <offsets>
-      <x-m> -0.130 </x-m>
-      <y-m>  0.116 </y-m>
-      <z-m>  0.164 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+</model>   
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/compass/compass.xml</path>
-    <offsets>
-      <x-m> 0.037 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.522 </z-m>
-    </offsets>
-  </model>
 
-  <!-- Controls -->
-  <animation>
-    <type>rotate</type>
-    <object-name>Yokeshaft</object-name>
-    <object-name>Yoke</object-name>
-    <object-name>Llight.switch</object-name>
-    <object-name>nut.001</object-name>
-    <property>controls/flight/elevator</property>
-    <factor> 15 </factor>
-    <center>
-      <x-m>  0.256 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.239 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+<animation>
+  <type>select</type>
+  <object-name>Garmin196-GPS-non-Canvas</object-name>
+  <condition>
+    <property>/sim/model/r44/gps-visible</property>
+  </condition>
+</animation>  
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Yoke</object-name>
-    <object-name>Llight.switch</object-name>
-    <object-name>nut.001</object-name>
-    <object-name>Yokeshaft</object-name>
-    <property>controls/flight/aileron</property>
-    <factor> 15 </factor>
-    <center>
-      <x-m>  0.256 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.239 </z-m>
-    </center>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-  
-  <animation>
-        <type>rotate</type>
-        <object-name>Llight.switch</object-name>
-        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
-        <factor>30</factor>
-        <center>
-            <x-m>0.270</x-m>
-            <y-m>-0.004</y-m>
-            <z-m>0.031</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-    
-     <animation>
-        <type>pick</type>
-        <object-name>Llight.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-  
-     <animation>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/ManifoldPressure/asi.xml</path>
+  <offsets>
+   <x-m> -0.123 </x-m>
+   <y-m>  0.078 </y-m>
+   <z-m>  0.082 </z-m>
+   <pitch-deg> -5 </pitch-deg>
+ </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/AmpsOilPress/c172fuel2.xml</path>
+  <offsets>
+    <x-m> -0.077 </x-m>
+    <y-m> 0.025 </y-m>    
+    <z-m>  0.017 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel2.xml</path>
+  <offsets>
+    <x-m> -0.038 </x-m>
+    <y-m> 0.025 </y-m>    
+    <z-m>  -0.001 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/FuelOilAmps/c172fuel.xml</path>
+  <offsets>
+    <x-m> 0.001 </x-m>
+    <y-m> 0.024 </y-m>    
+    <z-m>  -0.020 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kma20/kma20.xml</path>
+  <offsets>
+    <x-m> 0.102 </x-m>
+    <y-m> -0.005 </y-m>    
+    <z-m>  -0.089 </z-m>
+    <pitch-deg> -30 </pitch-deg>
+  </offsets>
+</model>
+
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kt76a/kt76a.xml</path>
+  <offsets>
+    <x-m> 0.158 </x-m>
+    <y-m> -0.005 </y-m>    
+    <z-m>  -0.206 </z-m>
+    <pitch-deg> -30 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
+  <offsets>
+    <x-m> 0.129 </x-m>
+    <y-m> -0.005 </y-m>
+    <z-m>  -0.144 </z-m>
+    <pitch-deg> -30 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+  <offsets>
+    <x-m> -0.123 </x-m>
+    <y-m> -0.078 </y-m>
+    <z-m>  0.082 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/hours/clock.xml</path>
+  <offsets>
+    <x-m> -0.077 </x-m>
+    <y-m> -0.053 </y-m>    
+    <z-m>  0.018 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+  <offsets>
+    <x-m> -0.022 </x-m>
+    <y-m> -0.053 </y-m>    
+    <z-m>  -0.008 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/vor/vor.xml</path>
+  <offsets>
+    <x-m> -0.123 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m>  0.082 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+  <offsets>
+    <x-m> -0.130 </x-m>
+    <y-m> -0.116 </y-m>
+    <z-m>  0.164 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+  <offsets>
+    <x-m> -0.130 </x-m>
+    <y-m> -0.039 </y-m>
+    <z-m>  0.164 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+  <offsets>
+    <x-m> -0.130 </x-m>
+    <y-m>  0.039 </y-m>
+    <z-m>  0.164 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
+  <offsets>
+    <x-m> -0.130 </x-m>
+    <y-m>  0.116 </y-m>
+    <z-m>  0.164 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+  <offsets>
+    <x-m> 0.037 </x-m>
+    <y-m> 0.000 </y-m>
+    <z-m> 0.522 </z-m>
+  </offsets>
+</model>
+
+<!-- Controls -->
+<animation>
+  <type>rotate</type>
+  <object-name>Yokeshaft</object-name>
+  <object-name>Yoke</object-name>
+  <object-name>FOYoke</object-name>
+  <object-name>FOYokeButton</object-name>
+  <object-name>Llight.switch</object-name>
+  <object-name>nut.001</object-name>
+  <property>controls/flight/elevator</property>
+  <factor> 15 </factor>
+  <center>
+    <x-m>  0.256 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.239 </z-m>
+  </center>
+  <axis>
+    <x>  0 </x>
+    <y> -1 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Yoke</object-name>
+  <object-name>FOYoke</object-name>
+  <object-name>FOYokeButton</object-name>
+  <object-name>Llight.switch</object-name>
+  <object-name>nut.001</object-name>
+  <object-name>Yokeshaft</object-name>
+  <property>controls/flight/aileron</property>
+  <factor> 15 </factor>
+  <center>
+    <x-m>  0.256 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.239 </z-m>
+  </center>
+  <axis>
+    <x> -1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Llight.switch</object-name>
+  <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.270</x-m>
+    <y-m>-0.004</y-m>
+    <z-m>0.031</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>Llight.switch</object-name>
+  <action>
+    <button>0</button>
+    <binding>
+      <command>property-toggle</command>
+      <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>sim/sound/click</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>FOYokeButton</object-name>
+  <action>
+    <button>0</button>
+    <binding>
+      <command>property-toggle</command>
+      <property>sim/sound/click</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>
+        var p = "/sim/model/r44/FOYoke-visible";
+        setprop(p, var i = !getprop(p));
+        gui.popupTip("Copilot yoke visible " ~ (i ? "On" : "Off"));
+      </script>
+    </binding>
+  </action>
+</animation>
+
+<animation>
   <type>select</type>
   <object-name>Light</object-name>
   <condition>
    <property>controls/lighting/landing-light</property>
-  </condition>
- </animation>
-  
+ </condition>
+</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>RHpedal</object-name>
-    <property>controls/flight/rudder</property>
-    <factor> 20 </factor>
-    <center>
-      <x-m> -0.123 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.361 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+<animation>
+  <type>select</type>
+  <object-name>FOYoke</object-name>
+  <condition>
+   <property>/sim/model/r44/FOYoke-visible</property>
+ </condition>
+</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>LHpedal</object-name>
-    <property>controls/flight/rudder</property>
-    <factor> -20 </factor>
-    <center>
-      <x-m> -0.123 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.361 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+<animation>
+  <type>rotate</type>
+  <object-name>RHpedal</object-name>
+  <property>controls/flight/rudder</property>
+  <factor> 20 </factor>
+  <center>
+    <x-m> -0.123 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.361 </z-m>
+  </center>
+  <axis>
+    <x>  0 </x>
+    <y> -1 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Collective</object-name>
-    <property>controls/engines/engine/throttle</property>
-    <factor> 30 </factor>
-    <center>
-      <x-m>  0.769 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.360 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+<animation>
+  <type>rotate</type>
+  <object-name>LHpedal</object-name>
+  <property>controls/flight/rudder</property>
+  <factor> -20 </factor>
+  <center>
+    <x-m> -0.123 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.361 </z-m>
+  </center>
+  <axis>
+    <x>  0 </x>
+    <y> -1 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
 
-  <!-- Les lampes -->
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/brake.xml</path>
-    <offsets>
-      <x-m> 0.020 </x-m>
-      <y-m> -0.042 </y-m>
-      <z-m> -0.027 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<animation>
+  <type>rotate</type>
+  <object-name>Collective</object-name>
+  <property>controls/engines/engine/throttle</property>
+  <factor> 30 </factor>
+  <center>
+    <x-m>  0.769 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.360 </z-m>
+  </center>
+  <axis>
+    <x>  0 </x>
+    <y> -1 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
-    <offsets>
-      <x-m> -0.110 </x-m>
-      <y-m> 0.007 </y-m>
-      <z-m> 0.034 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<!-- Les lampes -->
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/brake.xml</path>
+  <offsets>
+    <x-m> 0.020 </x-m>
+    <y-m> -0.042 </y-m>
+    <z-m> -0.027 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m> -0.074 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+  <offsets>
+    <x-m> -0.110 </x-m>
+    <y-m> 0.007 </y-m>
+    <z-m> 0.034 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-temp.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m> -0.054 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m> -0.074 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-chip.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m> -0.033 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-temp.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m> -0.054 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/starter-on.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m>  0.003 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/mr-chip.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m> -0.033 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/tr-chip.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m>  0.024 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/starter-on.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m>  0.003 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-fuel.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m>  0.044 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/tr-chip.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m>  0.024 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-rpm.xml</path>
-    <offsets>
-      <x-m> -0.132 </x-m>
-      <y-m>  0.065 </y-m>
-      <z-m>  0.227 </z-m>
-      <pitch-deg> -5 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-fuel.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m>  0.044 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <!-- Magneto -->
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/magneto/magneto.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m>  0.049 </y-m>
-      <z-m> -0.039 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/low-rpm.xml</path>
+  <offsets>
+    <x-m> -0.132 </x-m>
+    <y-m>  0.065 </y-m>
+    <z-m>  0.227 </z-m>
+    <pitch-deg> -5 </pitch-deg>
+  </offsets>
+</model>
 
-  <!-- Switch -->
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/nav-lts.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m> -0.073 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<!-- Magneto -->
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/magneto/magneto.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m>  0.049 </y-m>
+    <z-m> -0.039 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/strobe.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m> -0.056 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<!-- Switch -->
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/nav-lts.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m> -0.073 </y-m>
+    <z-m> -0.040 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/alt.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/strobe.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m> -0.056 </y-m>
+    <z-m> -0.040 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/master-batt.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m>  0.017 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/alt.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m>  0.000 </y-m>
+    <z-m> -0.040 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/clutch.xml</path>
-    <offsets>
-      <x-m>  0.052 </x-m>
-      <y-m> -0.029 </y-m>
-      <z-m> -0.040 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/master-batt.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m>  0.017 </y-m>
+    <z-m> -0.040 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
 
-  <!-- Dimmer -->
-  <model>
-    <path>Aircraft/R44/Models/Interior/Panel/Instruments/divers/dimmer.xml</path>
-    <offsets>
-      <x-m>  0.024 </x-m>
-      <y-m> -0.072 </y-m>
-      <z-m> -0.022 </z-m>
-      <pitch-deg> -65 </pitch-deg>
-    </offsets>
-  </model>
-  
-     <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-  
-    <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre.001</object-name>
-  </animation>
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/clutch.xml</path>
+  <offsets>
+    <x-m>  0.052 </x-m>
+    <y-m> -0.029 </y-m>
+    <z-m> -0.040 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<!-- Dimmer -->
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/divers/dimmer.xml</path>
+  <offsets>
+    <x-m>  0.024 </x-m>
+    <y-m> -0.072 </y-m>
+    <z-m> -0.022 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<animation>
+  <type>shader</type>
+  <shader>chrome</shader>
+  <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <object-name>vitre</object-name>
+</animation>
+
+<animation>
+  <type>shader</type>
+  <shader>chrome</shader>
+  <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <object-name>vitre.001</object-name>
+</animation>
 
 </PropertyList>

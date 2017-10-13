@@ -33,6 +33,9 @@
           <blue>  0.2 </blue>
         </emission>
       </livery-font>
+      <r44>
+        <tv type="bool">false</tv>
+      </r44>
     </model>
       
   </sim>

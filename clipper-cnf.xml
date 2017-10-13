@@ -10,9 +10,9 @@
 
     <startup>
       <splash-texture>Aircraft/R44/Splashs/clipper-splash.png</splash-texture>
-	  <splash-texture>Aircraft/R44/Splashs/clipper-splash1.png</splash-texture>
-	  <splash-texture>Aircraft/R44/Splashs/clipper-splash2.png</splash-texture>
-    </startup> 
+      <splash-texture>Aircraft/R44/Splashs/clipper-splash1.png</splash-texture>
+      <splash-texture>Aircraft/R44/Splashs/clipper-splash2.png</splash-texture>
+    </startup>
 
     <sound>
       <path>Aircraft/R44/Sounds/clipper-sound.xml</path>

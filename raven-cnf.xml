@@ -13,7 +13,7 @@
 	  <splash-texture>Splashs/raven-splash1.png</splash-texture>
 	  <splash-texture>Splashs/raven-splash2.png</splash-texture>
 	  <splash-texture>Splashs/raven-splash3.png</splash-texture>
-    </startup> 
+    </startup>
 
     <sound>
       <path>Aircraft/R44/Sounds/raven-sound.xml</path>
